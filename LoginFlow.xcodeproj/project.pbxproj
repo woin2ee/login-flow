@@ -23,6 +23,9 @@
 		E8E8968D288E951900E00879 /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89688288E951900E00879 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E8E8968E288E951900E00879 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89689288E951900E00879 /* RxCocoa.xcframework */; };
 		E8E8968F288E951900E00879 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89689288E951900E00879 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E8E89691288E96F200E00879 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89689288E951900E00879 /* RxCocoa.xcframework */; };
+		E8E89692288E96F200E00879 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89687288E951900E00879 /* RxRelay.xcframework */; };
+		E8E89693288E96F200E00879 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89688288E951900E00879 /* RxSwift.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E89691288E96F200E00879 /* RxCocoa.xcframework in Frameworks */,
+				E8E89692288E96F200E00879 /* RxRelay.xcframework in Frameworks */,
+				E8E89693288E96F200E00879 /* RxSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
