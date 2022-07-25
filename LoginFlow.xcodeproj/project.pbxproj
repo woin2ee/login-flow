@@ -14,19 +14,10 @@
 		E8E89645288E74C700E00879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8E89644288E74C700E00879 /* Assets.xcassets */; };
 		E8E89648288E74C700E00879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E89646288E74C700E00879 /* LaunchScreen.storyboard */; };
 		E8E89653288E74C700E00879 /* LoginFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E89652288E74C700E00879 /* LoginFlowTests.swift */; };
-		E8E8965D288E74C700E00879 /* LoginFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8965C288E74C700E00879 /* LoginFlowUITests.swift */; };
-		E8E8965F288E74C700E00879 /* LoginFlowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8965E288E74C700E00879 /* LoginFlowUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		E8E8964F288E74C700E00879 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E8E89630288E74C500E00879 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E8E89637288E74C500E00879;
-			remoteInfo = LoginFlow;
-		};
-		E8E89659288E74C700E00879 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E8E89630288E74C500E00879 /* Project object */;
 			proxyType = 1;
@@ -43,12 +34,9 @@
 		E8E89642288E74C500E00879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8E89644288E74C700E00879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8E89647288E74C700E00879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E8E89649288E74C700E00879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8E89649288E74C700E00879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = LoginFlow/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
 		E8E8964E288E74C700E00879 /* LoginFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E89652288E74C700E00879 /* LoginFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowTests.swift; sourceTree = "<group>"; };
-		E8E89658288E74C700E00879 /* LoginFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8E8965C288E74C700E00879 /* LoginFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowUITests.swift; sourceTree = "<group>"; };
-		E8E8965E288E74C700E00879 /* LoginFlowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +54,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8E89655288E74C700E00879 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,7 +62,6 @@
 			children = (
 				E8E8963A288E74C500E00879 /* LoginFlow */,
 				E8E89651288E74C700E00879 /* LoginFlowTests */,
-				E8E8965B288E74C700E00879 /* LoginFlowUITests */,
 				E8E89639288E74C500E00879 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +71,6 @@
 			children = (
 				E8E89638288E74C500E00879 /* LoginFlow.app */,
 				E8E8964E288E74C700E00879 /* LoginFlowTests.xctest */,
-				E8E89658288E74C700E00879 /* LoginFlowUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,13 +78,9 @@
 		E8E8963A288E74C500E00879 /* LoginFlow */ = {
 			isa = PBXGroup;
 			children = (
-				E8E8963B288E74C500E00879 /* AppDelegate.swift */,
-				E8E8963D288E74C500E00879 /* SceneDelegate.swift */,
-				E8E8963F288E74C500E00879 /* ViewController.swift */,
-				E8E89641288E74C500E00879 /* Main.storyboard */,
-				E8E89644288E74C700E00879 /* Assets.xcassets */,
-				E8E89646288E74C700E00879 /* LaunchScreen.storyboard */,
-				E8E89649288E74C700E00879 /* Info.plist */,
+				E8E8966B288E74D700E00879 /* Application */,
+				E8E8966C288E769900E00879 /* Resources */,
+				E8E8966D288E769D00E00879 /* Scenes */,
 			);
 			path = LoginFlow;
 			sourceTree = "<group>";
@@ -118,13 +93,32 @@
 			path = LoginFlowTests;
 			sourceTree = "<group>";
 		};
-		E8E8965B288E74C700E00879 /* LoginFlowUITests */ = {
+		E8E8966B288E74D700E00879 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				E8E8965C288E74C700E00879 /* LoginFlowUITests.swift */,
-				E8E8965E288E74C700E00879 /* LoginFlowUITestsLaunchTests.swift */,
+				E8E8963B288E74C500E00879 /* AppDelegate.swift */,
+				E8E8963D288E74C500E00879 /* SceneDelegate.swift */,
 			);
-			path = LoginFlowUITests;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E8E8966C288E769900E00879 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E8E89644288E74C700E00879 /* Assets.xcassets */,
+				E8E89649288E74C700E00879 /* Info.plist */,
+				E8E89646288E74C700E00879 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E8E8966D288E769D00E00879 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E8E89641288E74C500E00879 /* Main.storyboard */,
+				E8E8963F288E74C500E00879 /* ViewController.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,24 +159,6 @@
 			productReference = E8E8964E288E74C700E00879 /* LoginFlowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E8E89657288E74C700E00879 /* LoginFlowUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E8E89668288E74C700E00879 /* Build configuration list for PBXNativeTarget "LoginFlowUITests" */;
-			buildPhases = (
-				E8E89654288E74C700E00879 /* Sources */,
-				E8E89655288E74C700E00879 /* Frameworks */,
-				E8E89656288E74C700E00879 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E8E8965A288E74C700E00879 /* PBXTargetDependency */,
-			);
-			name = LoginFlowUITests;
-			productName = LoginFlowUITests;
-			productReference = E8E89658288E74C700E00879 /* LoginFlowUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +173,6 @@
 						CreatedOnToolsVersion = 13.4.1;
 					};
 					E8E8964D288E74C700E00879 = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = E8E89637288E74C500E00879;
-					};
-					E8E89657288E74C700E00879 = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = E8E89637288E74C500E00879;
 					};
@@ -221,7 +193,6 @@
 			targets = (
 				E8E89637288E74C500E00879 /* LoginFlow */,
 				E8E8964D288E74C700E00879 /* LoginFlowTests */,
-				E8E89657288E74C700E00879 /* LoginFlowUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -238,13 +209,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E8E8964C288E74C700E00879 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E8E89656288E74C700E00879 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,15 +236,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8E89654288E74C700E00879 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E8E8965F288E74C700E00879 /* LoginFlowUITestsLaunchTests.swift in Sources */,
-				E8E8965D288E74C700E00879 /* LoginFlowUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -288,11 +243,6 @@
 			isa = PBXTargetDependency;
 			target = E8E89637288E74C500E00879 /* LoginFlow */;
 			targetProxy = E8E8964F288E74C700E00879 /* PBXContainerItemProxy */;
-		};
-		E8E8965A288E74C700E00879 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E8E89637288E74C500E00879 /* LoginFlow */;
-			targetProxy = E8E89659288E74C700E00879 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -366,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -439,10 +389,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2AVC8X7323;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginFlow/Info.plist;
+				INFOPLIST_FILE = LoginFlow/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -454,7 +405,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -467,10 +418,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2AVC8X7323;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginFlow/Info.plist;
+				INFOPLIST_FILE = LoginFlow/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -482,7 +434,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -526,42 +478,6 @@
 			};
 			name = Release;
 		};
-		E8E89669288E74C700E00879 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2AVC8X7323;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = woin2ee.LoginFlowUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LoginFlow;
-			};
-			name = Debug;
-		};
-		E8E8966A288E74C700E00879 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2AVC8X7323;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = woin2ee.LoginFlowUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LoginFlow;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -588,15 +504,6 @@
 			buildConfigurations = (
 				E8E89666288E74C700E00879 /* Debug */,
 				E8E89667288E74C700E00879 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E8E89668288E74C700E00879 /* Build configuration list for PBXNativeTarget "LoginFlowUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E8E89669288E74C700E00879 /* Debug */,
-				E8E8966A288E74C700E00879 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
