@@ -17,6 +17,12 @@
 		E8E89671288E7E6100E00879 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E89670288E7E6100E00879 /* LoginViewController.swift */; };
 		E8E89673288E7E7A00E00879 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E89672288E7E7A00E00879 /* Login.storyboard */; };
 		E8E89677288E868600E00879 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E89676288E868600E00879 /* LoginViewModel.swift */; };
+		E8E8968A288E951900E00879 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89687288E951900E00879 /* RxRelay.xcframework */; };
+		E8E8968B288E951900E00879 /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89687288E951900E00879 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E8E8968C288E951900E00879 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89688288E951900E00879 /* RxSwift.xcframework */; };
+		E8E8968D288E951900E00879 /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89688288E951900E00879 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E8E8968E288E951900E00879 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89689288E951900E00879 /* RxCocoa.xcframework */; };
+		E8E8968F288E951900E00879 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8E89689288E951900E00879 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +34,22 @@
 			remoteInfo = LoginFlow;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E8E89690288E951900E00879 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E8E8968B288E951900E00879 /* RxRelay.xcframework in Embed Frameworks */,
+				E8E8968D288E951900E00879 /* RxSwift.xcframework in Embed Frameworks */,
+				E8E8968F288E951900E00879 /* RxCocoa.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E8E89638288E74C500E00879 /* LoginFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +65,9 @@
 		E8E89670288E7E6100E00879 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E8E89672288E7E7A00E00879 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E8E89676288E868600E00879 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E8E89687288E951900E00879 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
+		E8E89688288E951900E00879 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		E8E89689288E951900E00879 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E8968A288E951900E00879 /* RxRelay.xcframework in Frameworks */,
+				E8E8968C288E951900E00879 /* RxSwift.xcframework in Frameworks */,
+				E8E8968E288E951900E00879 /* RxCocoa.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +97,7 @@
 				E8E8963A288E74C500E00879 /* LoginFlow */,
 				E8E89651288E74C700E00879 /* LoginFlowTests */,
 				E8E89639288E74C500E00879 /* Products */,
+				E8E89686288E951900E00879 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +191,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E8E89686288E951900E00879 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8E89689288E951900E00879 /* RxCocoa.xcframework */,
+				E8E89687288E951900E00879 /* RxRelay.xcframework */,
+				E8E89688288E951900E00879 /* RxSwift.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,6 +211,7 @@
 				E8E89634288E74C500E00879 /* Sources */,
 				E8E89635288E74C500E00879 /* Frameworks */,
 				E8E89636288E74C500E00879 /* Resources */,
+				E8E89690288E951900E00879 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
