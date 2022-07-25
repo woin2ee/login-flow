@@ -73,6 +73,12 @@
                             <constraint firstItem="WTb-4s-HMP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="300" id="pXs-7p-oUC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="idTextField" destination="eXe-LG-M4G" id="CE8-2q-LBG"/>
+                        <outlet property="loginButton" destination="09H-JS-htU" id="oLj-WU-0N8"/>
+                        <outlet property="passwordTextField" destination="8YY-9P-kVb" id="RP4-9J-63Z"/>
+                        <outlet property="signUpButton" destination="iKr-Ly-47y" id="low-aM-i6J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
