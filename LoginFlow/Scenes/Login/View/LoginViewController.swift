@@ -37,5 +37,12 @@ final class LoginViewController: UIViewController {
         )
         let output = viewModel.transform(input: input)
         
+        output.login
+            .drive(
+                onNext: {
+                    self.dismiss(animated: true)
+                }
+            )
+            .disposed(by: disposeBag)
     }
 }

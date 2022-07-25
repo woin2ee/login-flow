@@ -18,12 +18,16 @@ final class LoginViewModel: ViewModelType {
     }
     
     struct Output {
-        
+        var login: Driver<Void>
     }
     
     func transform(input: Input) -> Output {
         let idAndPassword = Driver.combineLatest(input.id, input.password)
         
-        return Output.init()
+        let login = input.loginRequest
+            .withLatestFrom(idAndPassword)
+            .map { _, _ in }
+        
+        return Output.init(login: login)
     }
 }
