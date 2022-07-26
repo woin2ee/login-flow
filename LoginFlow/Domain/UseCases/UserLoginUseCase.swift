@@ -10,7 +10,7 @@ import Foundation
 protocol UserLoginUseCaseProtocol {
     associatedtype Token
     
-    func execute(user: User) -> Token
+    func execute(query: LoginQuery) -> Token
 }
 
 final class UserLoginUseCase: UserLoginUseCaseProtocol {
@@ -23,7 +23,7 @@ final class UserLoginUseCase: UserLoginUseCaseProtocol {
         self.userRepository = userRepository
     }
     
-    func execute(user: User) -> Token {
-        return userRepository.getToken(user: user)
+    func execute(query: LoginQuery) -> Token {
+        return userRepository.getToken(query: query)
     }
 }

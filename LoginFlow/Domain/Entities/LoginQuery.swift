@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  LoginQuery.swift
 //  LoginFlow
 //
 //  Created by Jaewon on 2022/07/26.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
+struct LoginQuery {
     var id: String
-    var email: String
+    var password: String
 }

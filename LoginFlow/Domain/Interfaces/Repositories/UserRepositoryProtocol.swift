@@ -10,5 +10,5 @@ import Foundation
 protocol UserRepositoryProtocol {
     associatedtype Token
     
-    func getToken(user: User) -> Token
+    func getToken(query: LoginQuery) -> Token
 }

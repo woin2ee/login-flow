@@ -11,7 +11,7 @@ final class UserRepository: UserRepositoryProtocol {
     
     typealias Token = String
     
-    func getToken(user: User) -> Token {
+    func getToken(query: LoginQuery) -> Token {
         return Token.init()
     }
 }
