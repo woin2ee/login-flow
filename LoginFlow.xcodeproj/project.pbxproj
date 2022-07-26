@@ -12,6 +12,7 @@
 		E86E7EC7288FC11900D9D194 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7EC6288FC11900D9D194 /* User.swift */; };
 		E86E7ED0288FD03000D9D194 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7ECF288FD03000D9D194 /* UserRepository.swift */; };
 		E86E7ED2288FD55300D9D194 /* LoginQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7ED1288FD55300D9D194 /* LoginQuery.swift */; };
+		E86E7ED5288FE3A600D9D194 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7ED4288FE3A600D9D194 /* NetworkService.swift */; };
 		E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963B288E74C500E00879 /* AppDelegate.swift */; };
 		E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963D288E74C500E00879 /* SceneDelegate.swift */; };
 		E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963F288E74C500E00879 /* HomeViewController.swift */; };
@@ -67,6 +68,7 @@
 		E86E7EC6288FC11900D9D194 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E86E7ECF288FD03000D9D194 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		E86E7ED1288FD55300D9D194 /* LoginQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginQuery.swift; sourceTree = "<group>"; };
+		E86E7ED4288FE3A600D9D194 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E8E89638288E74C500E00879 /* LoginFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E8963B288E74C500E00879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E8963D288E74C500E00879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		E86E7ED3288FE39A00D9D194 /* Infrastructrue */ = {
+			isa = PBXGroup;
+			children = (
+				E86E7ED4288FE3A600D9D194 /* NetworkService.swift */,
+			);
+			path = Infrastructrue;
+			sourceTree = "<group>";
+		};
 		E8E8962F288E74C500E00879 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +205,7 @@
 				E8E8966B288E74D700E00879 /* Application */,
 				E86E7ECD288FCFDA00D9D194 /* Data */,
 				E86E7EBD288FBD5300D9D194 /* Domain */,
+				E86E7ED3288FE39A00D9D194 /* Infrastructrue */,
 				E8E8966C288E769900E00879 /* Resources */,
 				E8E8966D288E769D00E00879 /* Scenes */,
 			);
@@ -422,6 +433,7 @@
 				E8E89677288E868600E00879 /* LoginViewModel.swift in Sources */,
 				E86E7EC7288FC11900D9D194 /* User.swift in Sources */,
 				E86E7ED2288FD55300D9D194 /* LoginQuery.swift in Sources */,
+				E86E7ED5288FE3A600D9D194 /* NetworkService.swift in Sources */,
 				E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

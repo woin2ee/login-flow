@@ -13,7 +13,7 @@ final class LoginViewController: UIViewController {
     
     private let disposeBag = DisposeBag.init()
     
-    private var viewModel: LoginViewModel! = .init(userLoginUseCase: UserLoginUseCase(userRepository: UserRepository()))
+    private var viewModel: LoginViewModel! = .init(userLoginUseCase: UserLoginUseCase(userRepository: UserRepository(networkService: NetworkService())))
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField! {
@@ -42,6 +42,9 @@ final class LoginViewController: UIViewController {
             .subscribe(
                 onNext: { token in
                     print(token)
+                },
+                onError: { error in
+                    print(error)
                 }
             )
             .disposed(by: disposeBag)
