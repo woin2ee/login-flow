@@ -11,8 +11,9 @@ import RxCocoa
 
 final class LoginViewController: UIViewController {
     
-    private var viewModel: LoginViewModel! = .init()
     private let disposeBag = DisposeBag.init()
+    
+    private var viewModel: LoginViewModel! = .init()
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField! {
