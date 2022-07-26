@@ -18,7 +18,7 @@ final class LoginViewModel: ViewModelType {
     }
     
     struct Output {
-        var login: Observable<String>
+        var login: Driver<String>
     }
     
     private var userLoginUseCase: UserLoginUseCase
@@ -36,6 +36,7 @@ final class LoginViewModel: ViewModelType {
             .flatMapFirst { id, password in
                 return self.userLoginUseCase.execute(query: .init(id: id, password: password))
             }
+            .asDriver(onErrorJustReturn: "Error")
         
         return Output.init(login: login)
     }

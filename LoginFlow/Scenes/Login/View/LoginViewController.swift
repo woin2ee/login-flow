@@ -39,12 +39,9 @@ final class LoginViewController: UIViewController {
         let output = viewModel.transform(input: input)
         
         output.login
-            .subscribe(
+            .drive(
                 onNext: { token in
                     print(token)
-                },
-                onError: { error in
-                    print(error)
                 }
             )
             .disposed(by: disposeBag)
