@@ -40,7 +40,7 @@ final class LoginViewController: UIViewController {
         output.login
             .drive(
                 onNext: {
-                    self.dismiss(animated: true)
+                    self.dismiss(animated: false)
                 }
             )
             .disposed(by: disposeBag)

@@ -18,6 +18,7 @@ final class HomeViewController: UIViewController {
     @IBAction func didTapLoginButton(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: String(describing: LoginViewController.self))
-        self.present(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false)
     }
 }
