@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E86E7EC2288FC04F00D9D194 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7EC1288FC04F00D9D194 /* UserRepositoryProtocol.swift */; };
+		E86E7EC4288FC08700D9D194 /* UserLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7EC3288FC08700D9D194 /* UserLoginUseCase.swift */; };
+		E86E7EC7288FC11900D9D194 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7EC6288FC11900D9D194 /* User.swift */; };
 		E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963B288E74C500E00879 /* AppDelegate.swift */; };
 		E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963D288E74C500E00879 /* SceneDelegate.swift */; };
 		E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963F288E74C500E00879 /* HomeViewController.swift */; };
@@ -57,6 +60,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E86E7EC1288FC04F00D9D194 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
+		E86E7EC3288FC08700D9D194 /* UserLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginUseCase.swift; sourceTree = "<group>"; };
+		E86E7EC6288FC11900D9D194 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E8E89638288E74C500E00879 /* LoginFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E8963B288E74C500E00879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E8963D288E74C500E00879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +107,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E86E7EBD288FBD5300D9D194 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E86E7EC5288FC10000D9D194 /* Entities */,
+				E86E7EC0288FBFA700D9D194 /* Interfaces */,
+				E86E7EBE288FBD6F00D9D194 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E86E7EBE288FBD6F00D9D194 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E86E7EC3288FC08700D9D194 /* UserLoginUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		E86E7EBF288FBFA000D9D194 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E86E7EC1288FC04F00D9D194 /* UserRepositoryProtocol.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E86E7EC0288FBFA700D9D194 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				E86E7EBF288FBFA000D9D194 /* Repositories */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		E86E7EC5288FC10000D9D194 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E86E7EC6288FC11900D9D194 /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		E8E8962F288E74C500E00879 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				E8E8966B288E74D700E00879 /* Application */,
+				E86E7EBD288FBD5300D9D194 /* Domain */,
 				E8E8966C288E769900E00879 /* Resources */,
 				E8E8966D288E769D00E00879 /* Scenes */,
 			);
@@ -340,12 +389,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E86E7EC2288FC04F00D9D194 /* UserRepositoryProtocol.swift in Sources */,
 				E8E89671288E7E6100E00879 /* LoginViewController.swift in Sources */,
 				E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */,
 				E8E8969A288EFDD200E00879 /* HomeViewModel.swift in Sources */,
+				E86E7EC4288FC08700D9D194 /* UserLoginUseCase.swift in Sources */,
 				E8E89696288E98CA00E00879 /* ViewModelType.swift in Sources */,
 				E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */,
 				E8E89677288E868600E00879 /* LoginViewModel.swift in Sources */,
+				E86E7EC7288FC11900D9D194 /* User.swift in Sources */,
 				E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
