@@ -17,13 +17,13 @@ final class UserLoginUseCase: UserLoginUseCaseProtocol {
     
     typealias Token = String
     
-    private var userRepository: UserRepositoryProtocol
+    private var userRepository: UserRepository
     
-    init(userRepository: UserRepositoryProtocol) {
+    init(userRepository: UserRepository) {
         self.userRepository = userRepository
     }
     
     func execute(user: User) -> Token {
-        return Token.init()
+        return userRepository.getToken(user: user)
     }
 }

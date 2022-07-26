@@ -8,5 +8,7 @@
 import Foundation
 
 protocol UserRepositoryProtocol {
-    func getToken(user: User) -> String
+    associatedtype Token
+    
+    func getToken(user: User) -> Token
 }
