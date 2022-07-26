@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol UserRepositoryProtocol {
     associatedtype Token
     
-    func getToken(query: LoginQuery) -> Token
+    func getToken(query: LoginQuery) -> Observable<Token>
 }

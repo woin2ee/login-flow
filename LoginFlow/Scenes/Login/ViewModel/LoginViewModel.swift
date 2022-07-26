@@ -18,7 +18,13 @@ final class LoginViewModel: ViewModelType {
     }
     
     struct Output {
-        var login: Driver<Void>
+        var login: Observable<String>
+    }
+    
+    private var userLoginUseCase: UserLoginUseCase
+    
+    init(userLoginUseCase: UserLoginUseCase) {
+        self.userLoginUseCase = userLoginUseCase
     }
     
     func transform(input: Input) -> Output {
@@ -26,7 +32,10 @@ final class LoginViewModel: ViewModelType {
         
         let login = input.loginRequest
             .withLatestFrom(idAndPassword)
-            .map { _, _ in }
+            .asObservable()
+            .flatMapFirst { id, password in
+                return self.userLoginUseCase.execute(query: .init(id: id, password: password))
+            }
         
         return Output.init(login: login)
     }

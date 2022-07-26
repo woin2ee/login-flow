@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol UserLoginUseCaseProtocol {
     associatedtype Token
     
-    func execute(query: LoginQuery) -> Token
+    func execute(query: LoginQuery) -> Observable<Token>
 }
 
 final class UserLoginUseCase: UserLoginUseCaseProtocol {
@@ -23,7 +24,7 @@ final class UserLoginUseCase: UserLoginUseCaseProtocol {
         self.userRepository = userRepository
     }
     
-    func execute(query: LoginQuery) -> Token {
+    func execute(query: LoginQuery) -> Observable<Token> {
         return userRepository.getToken(query: query)
     }
 }
