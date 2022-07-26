@@ -49,4 +49,8 @@ final class LoginViewController: UIViewController {
             )
             .disposed(by: disposeBag)
     }
+    
+    @IBAction func didTapDismissButton(_ sender: UIButton) {
+        self.dismiss(animated: false)
+    }
 }
