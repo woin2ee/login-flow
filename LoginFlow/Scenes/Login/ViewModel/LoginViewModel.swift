@@ -43,6 +43,7 @@ final class LoginViewModel: ViewModelType {
     }
     
     private func saveKeychain(token: String) -> Bool {
+        print("Token >>>>> \(token)")
         return true
     }
 }

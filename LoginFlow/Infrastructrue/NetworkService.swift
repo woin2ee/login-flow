@@ -6,14 +6,23 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol NetworkServiceProtocol {
-    func request(_ request: URLRequest)
+    associatedtype Token
+    
+    func request(_ path: String, _ query: String) -> Observable<Token>
 }
 
 final class NetworkService: NetworkServiceProtocol {
     
-    func request(_ request: URLRequest) {
+    typealias Token = String
+    
+    private let endPoint: String = "localhost:8080"
+    
+    func request(_ path: String, _ query: String) -> Observable<Token> {
+        let absolutePath = "\(endPoint)/\(path)?\(query)"
         
+        return .of("Test Token")
     }
 }
