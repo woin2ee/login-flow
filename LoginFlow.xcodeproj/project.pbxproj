@@ -13,6 +13,9 @@
 		E86E7ED0288FD03000D9D194 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7ECF288FD03000D9D194 /* UserRepository.swift */; };
 		E86E7ED2288FD55300D9D194 /* LoginQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7ED1288FD55300D9D194 /* LoginQuery.swift */; };
 		E86E7ED5288FE3A600D9D194 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7ED4288FE3A600D9D194 /* NetworkService.swift */; };
+		E8CAC2AE2891495E004BC29E /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */; };
+		E8CAC2AF2891495E004BC29E /* SwiftyJSON.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E8CAC2B02891496B004BC29E /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */; };
 		E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963B288E74C500E00879 /* AppDelegate.swift */; };
 		E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963D288E74C500E00879 /* SceneDelegate.swift */; };
 		E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963F288E74C500E00879 /* HomeViewController.swift */; };
@@ -54,6 +57,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E8E8968B288E951900E00879 /* RxRelay.xcframework in Embed Frameworks */,
+				E8CAC2AF2891495E004BC29E /* SwiftyJSON.xcframework in Embed Frameworks */,
 				E8E8968D288E951900E00879 /* RxSwift.xcframework in Embed Frameworks */,
 				E8E8968F288E951900E00879 /* RxCocoa.xcframework in Embed Frameworks */,
 			);
@@ -69,6 +73,7 @@
 		E86E7ECF288FD03000D9D194 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		E86E7ED1288FD55300D9D194 /* LoginQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginQuery.swift; sourceTree = "<group>"; };
 		E86E7ED4288FE3A600D9D194 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftyJSON.xcframework; path = Carthage/Build/SwiftyJSON.xcframework; sourceTree = "<group>"; };
 		E8E89638288E74C500E00879 /* LoginFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E8963B288E74C500E00879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E8963D288E74C500E00879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8E8968A288E951900E00879 /* RxRelay.xcframework in Frameworks */,
+				E8CAC2AE2891495E004BC29E /* SwiftyJSON.xcframework in Frameworks */,
 				E8E8968C288E951900E00879 /* RxSwift.xcframework in Frameworks */,
 				E8E8968E288E951900E00879 /* RxCocoa.xcframework in Frameworks */,
 			);
@@ -104,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8CAC2B02891496B004BC29E /* SwiftyJSON.xcframework in Frameworks */,
 				E8E89691288E96F200E00879 /* RxCocoa.xcframework in Frameworks */,
 				E8E89692288E96F200E00879 /* RxRelay.xcframework in Frameworks */,
 				E8E89693288E96F200E00879 /* RxSwift.xcframework in Frameworks */,
@@ -287,6 +294,7 @@
 		E8E89686288E951900E00879 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */,
 				E8E89689288E951900E00879 /* RxCocoa.xcframework */,
 				E8E89687288E951900E00879 /* RxRelay.xcframework */,
 				E8E89688288E951900E00879 /* RxSwift.xcframework */,
