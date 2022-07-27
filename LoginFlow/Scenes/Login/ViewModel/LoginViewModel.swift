@@ -18,7 +18,7 @@ final class LoginViewModel: ViewModelType {
     }
     
     struct Output {
-        var login: Driver<String>
+        var login: Driver<Bool>
     }
     
     private var userLoginUseCase: UserLoginUseCase
@@ -36,8 +36,13 @@ final class LoginViewModel: ViewModelType {
             .flatMapFirst { id, password in
                 return self.userLoginUseCase.execute(query: .init(id: id, password: password))
             }
-            .asDriver(onErrorJustReturn: "Error")
+            .map { self.saveKeychain(token: $0) }
+            .asDriver(onErrorJustReturn: false)
         
         return Output.init(login: login)
+    }
+    
+    private func saveKeychain(token: String) -> Bool {
+        return true
     }
 }
