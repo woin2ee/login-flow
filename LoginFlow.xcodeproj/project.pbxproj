@@ -19,7 +19,7 @@
 		E8E89643288E74C500E00879 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E89641288E74C500E00879 /* Home.storyboard */; };
 		E8E89645288E74C700E00879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8E89644288E74C700E00879 /* Assets.xcassets */; };
 		E8E89648288E74C700E00879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E89646288E74C700E00879 /* LaunchScreen.storyboard */; };
-		E8E89653288E74C700E00879 /* LoginFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E89652288E74C700E00879 /* LoginFlowTests.swift */; };
+		E8E89653288E74C700E00879 /* RxSwiftOperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E89652288E74C700E00879 /* RxSwiftOperatorTests.swift */; };
 		E8E89671288E7E6100E00879 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E89670288E7E6100E00879 /* LoginViewController.swift */; };
 		E8E89673288E7E7A00E00879 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E89672288E7E7A00E00879 /* Login.storyboard */; };
 		E8E89677288E868600E00879 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E89676288E868600E00879 /* LoginViewModel.swift */; };
@@ -78,7 +78,7 @@
 		E8E89647288E74C700E00879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8E89649288E74C700E00879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = LoginFlow/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
 		E8E8964E288E74C700E00879 /* LoginFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8E89652288E74C700E00879 /* LoginFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowTests.swift; sourceTree = "<group>"; };
+		E8E89652288E74C700E00879 /* RxSwiftOperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftOperatorTests.swift; sourceTree = "<group>"; };
 		E8E89670288E7E6100E00879 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E8E89672288E7E7A00E00879 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E8E89676288E868600E00879 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 		E8E89651288E74C700E00879 /* LoginFlowTests */ = {
 			isa = PBXGroup;
 			children = (
-				E8E89652288E74C700E00879 /* LoginFlowTests.swift */,
+				E8E89652288E74C700E00879 /* RxSwiftOperatorTests.swift */,
 			);
 			path = LoginFlowTests;
 			sourceTree = "<group>";
@@ -442,7 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8E89653288E74C700E00879 /* LoginFlowTests.swift in Sources */,
+				E8E89653288E74C700E00879 /* RxSwiftOperatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
