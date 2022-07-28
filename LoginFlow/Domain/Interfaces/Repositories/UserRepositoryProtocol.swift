@@ -7,9 +7,8 @@
 
 import Foundation
 import RxSwift
+import SwiftyJSON
 
 protocol UserRepositoryProtocol {
-    associatedtype Token
-    
-    func getToken(query: LoginQuery) -> Observable<Token>
+    func getToken(query: LoginQuery) -> Observable<String>
 }

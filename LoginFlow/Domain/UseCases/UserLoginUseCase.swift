@@ -7,24 +7,27 @@
 
 import Foundation
 import RxSwift
+import SwiftyJSON
 
 protocol UserLoginUseCaseProtocol {
-    associatedtype Token
-    
-    func execute(query: LoginQuery) -> Observable<Token>
+    func execute(query: LoginQuery) -> Observable<Void>
 }
 
 final class UserLoginUseCase: UserLoginUseCaseProtocol {
     
-    typealias Token = String
+    private var userRepository: UserRepositoryProtocol
     
-    private var userRepository: UserRepository
-    
-    init(userRepository: UserRepository) {
+    init(userRepository: UserRepositoryProtocol) {
         self.userRepository = userRepository
     }
     
-    func execute(query: LoginQuery) -> Observable<Token> {
+    func execute(query: LoginQuery) -> Observable<Void> {
         return userRepository.getToken(query: query)
+            .do(onNext: { token in self.saveKeychain(token: token) })
+            .map { _ in () }
+    }
+    
+    private func saveKeychain(token: String) {
+        print("Token >>>>> \(token)")
     }
 }

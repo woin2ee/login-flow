@@ -7,22 +7,32 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
+import SwiftyJSON
+
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
 
 protocol NetworkServiceProtocol {
-    associatedtype Token
-    
-    func request(_ path: String, _ query: String) -> Observable<Token>
+    func request(_ path: String, _ query: String, _ method: HTTPMethod) -> Observable<JSON>
 }
 
 final class NetworkService: NetworkServiceProtocol {
     
-    typealias Token = String
+    private let endPoint: String = "http://localhost:8080"
     
-    private let endPoint: String = "localhost:8080"
-    
-    func request(_ path: String, _ query: String) -> Observable<Token> {
-        let absolutePath = "\(endPoint)/\(path)?\(query)"
+    func request(_ path: String, _ query: String, _ method: HTTPMethod) -> Observable<JSON> {
+        let absolutePath = "\(endPoint)\(path)?\(query)"
         
-        return .of("Test Token")
+        guard let url = URL.init(string: absolutePath)
+        else { return .error(NetworkError.invalidURL) }
+        
+        var urlRequest = URLRequest.init(url: url)
+        urlRequest.httpMethod = method.rawValue
+        
+        return URLSession.shared.rx.response(request: urlRequest)
+            .map { _, data -> JSON in try JSON.init(data: data) }
     }
 }

@@ -16,6 +16,11 @@
 		E8CAC2AE2891495E004BC29E /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */; };
 		E8CAC2AF2891495E004BC29E /* SwiftyJSON.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E8CAC2B02891496B004BC29E /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */; };
+		E8CAC2B42892667A004BC29E /* SignUpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2B32892667A004BC29E /* SignUpError.swift */; };
+		E8CAC2B62892793D004BC29E /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2B52892793D004BC29E /* HTTPStatusCode.swift */; };
+		E8CAC2B928927FBB004BC29E /* JsonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2B828927FBB004BC29E /* JsonError.swift */; };
+		E8CAC2BB2892804F004BC29E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2BA2892804F004BC29E /* NetworkError.swift */; };
+		E8CAC2BD28928B09004BC29E /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2BC28928B09004BC29E /* ErrorTracker.swift */; };
 		E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963B288E74C500E00879 /* AppDelegate.swift */; };
 		E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963D288E74C500E00879 /* SceneDelegate.swift */; };
 		E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963F288E74C500E00879 /* HomeViewController.swift */; };
@@ -74,6 +79,11 @@
 		E86E7ED1288FD55300D9D194 /* LoginQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginQuery.swift; sourceTree = "<group>"; };
 		E86E7ED4288FE3A600D9D194 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftyJSON.xcframework; path = Carthage/Build/SwiftyJSON.xcframework; sourceTree = "<group>"; };
+		E8CAC2B32892667A004BC29E /* SignUpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpError.swift; sourceTree = "<group>"; };
+		E8CAC2B52892793D004BC29E /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
+		E8CAC2B828927FBB004BC29E /* JsonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonError.swift; sourceTree = "<group>"; };
+		E8CAC2BA2892804F004BC29E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E8CAC2BC28928B09004BC29E /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
 		E8E89638288E74C500E00879 /* LoginFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E8963B288E74C500E00879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E8963D288E74C500E00879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +197,34 @@
 			path = Infrastructrue;
 			sourceTree = "<group>";
 		};
+		E8CAC2B12892665B004BC29E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E8CAC2BC28928B09004BC29E /* ErrorTracker.swift */,
+				E8CAC2B728927946004BC29E /* Network */,
+				E8CAC2B22892666B004BC29E /* Error */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		E8CAC2B22892666B004BC29E /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				E8CAC2B32892667A004BC29E /* SignUpError.swift */,
+				E8CAC2B828927FBB004BC29E /* JsonError.swift */,
+				E8CAC2BA2892804F004BC29E /* NetworkError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		E8CAC2B728927946004BC29E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E8CAC2B52892793D004BC29E /* HTTPStatusCode.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		E8E8962F288E74C500E00879 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +253,7 @@
 				E86E7ED3288FE39A00D9D194 /* Infrastructrue */,
 				E8E8966C288E769900E00879 /* Resources */,
 				E8E8966D288E769D00E00879 /* Scenes */,
+				E8CAC2B12892665B004BC29E /* Util */,
 			);
 			path = LoginFlow;
 			sourceTree = "<group>";
@@ -430,18 +469,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8CAC2BB2892804F004BC29E /* NetworkError.swift in Sources */,
+				E8CAC2B62892793D004BC29E /* HTTPStatusCode.swift in Sources */,
 				E86E7ED0288FD03000D9D194 /* UserRepository.swift in Sources */,
 				E86E7EC2288FC04F00D9D194 /* UserRepositoryProtocol.swift in Sources */,
 				E8E89671288E7E6100E00879 /* LoginViewController.swift in Sources */,
 				E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */,
 				E8E8969A288EFDD200E00879 /* HomeViewModel.swift in Sources */,
 				E86E7EC4288FC08700D9D194 /* UserLoginUseCase.swift in Sources */,
+				E8CAC2B42892667A004BC29E /* SignUpError.swift in Sources */,
 				E8E89696288E98CA00E00879 /* ViewModelType.swift in Sources */,
 				E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */,
 				E8E89677288E868600E00879 /* LoginViewModel.swift in Sources */,
 				E86E7EC7288FC11900D9D194 /* User.swift in Sources */,
+				E8CAC2BD28928B09004BC29E /* ErrorTracker.swift in Sources */,
 				E86E7ED2288FD55300D9D194 /* LoginQuery.swift in Sources */,
 				E86E7ED5288FE3A600D9D194 /* NetworkService.swift in Sources */,
+				E8CAC2B928927FBB004BC29E /* JsonError.swift in Sources */,
 				E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

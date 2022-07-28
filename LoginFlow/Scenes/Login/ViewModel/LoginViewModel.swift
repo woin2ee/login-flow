@@ -7,6 +7,7 @@
 
 import RxSwift
 import RxCocoa
+import SwiftyJSON
 
 final class LoginViewModel: ViewModelType {
     
@@ -18,7 +19,8 @@ final class LoginViewModel: ViewModelType {
     }
     
     struct Output {
-        var login: Driver<Bool>
+        var error: Driver<Error>
+        var login: Driver<Void>
     }
     
     private var userLoginUseCase: UserLoginUseCase
@@ -28,22 +30,21 @@ final class LoginViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
+        let errorTracker = ErrorTracker.init()
+        
         let idAndPassword = Driver.combineLatest(input.id, input.password)
         
         let login = input.loginRequest
             .withLatestFrom(idAndPassword)
-            .asObservable()
             .flatMapFirst { id, password in
                 return self.userLoginUseCase.execute(query: .init(id: id, password: password))
+                    .trackError(errorTracker)
+                    .asDriverOnErrorJustComplete()
             }
-            .map { self.saveKeychain(token: $0) }
-            .asDriver(onErrorJustReturn: false)
         
-        return Output.init(login: login)
-    }
-    
-    private func saveKeychain(token: String) -> Bool {
-        print("Token >>>>> \(token)")
-        return true
+        return Output.init(
+            error: errorTracker.asDriver(),
+            login: login
+        )
     }
 }
