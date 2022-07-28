@@ -51,7 +51,8 @@ final class LoginViewController: UIViewController {
             .drive(
                 onNext: { error in
                     self.view.endEditing(true)
-                    self.passwordTextField.text = nil
+                    self.passwordTextField.text = ""
+                    self.passwordTextField.sendActions(for: .valueChanged)
                     
                     if let error = error as? SignUpError {
                         print("\(error.description)")
