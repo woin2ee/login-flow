@@ -55,9 +55,9 @@ final class LoginViewController: UIViewController {
                     self.passwordTextField.sendActions(for: .valueChanged)
                     
                     if let error = error as? SignUpError {
-                        print("\(error.description)")
+                        self.showAlert(message: error.description)
                     } else {
-                        print("Error >>>>> \(error.localizedDescription)")
+                        self.showAlert(message: SignUpError.defaultDescription)
                     }
                 }
             )
@@ -66,5 +66,21 @@ final class LoginViewController: UIViewController {
     
     @IBAction func didTapDismissButton(_ sender: UIButton) {
         self.dismiss(animated: false)
+    }
+    
+    private func showAlert(message: String) {
+        let alertController = UIAlertController.init(
+            title: "알림",
+            message: message,
+            preferredStyle: .alert
+        )
+        let defaultAction = UIAlertAction.init(
+            title: "확인",
+            style: .default
+        )
+        
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true)
     }
 }
