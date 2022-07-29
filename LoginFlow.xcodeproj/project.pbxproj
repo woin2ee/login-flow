@@ -21,6 +21,7 @@
 		E8CAC2B928927FBB004BC29E /* JsonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2B828927FBB004BC29E /* JsonError.swift */; };
 		E8CAC2BB2892804F004BC29E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2BA2892804F004BC29E /* NetworkError.swift */; };
 		E8CAC2BD28928B09004BC29E /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2BC28928B09004BC29E /* ErrorTracker.swift */; };
+		E8CAC2BF2893C0C5004BC29E /* RxSwiftErrorTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2BE2893C0C4004BC29E /* RxSwiftErrorTrackerTests.swift */; };
 		E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963B288E74C500E00879 /* AppDelegate.swift */; };
 		E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963D288E74C500E00879 /* SceneDelegate.swift */; };
 		E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963F288E74C500E00879 /* HomeViewController.swift */; };
@@ -84,6 +85,7 @@
 		E8CAC2B828927FBB004BC29E /* JsonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonError.swift; sourceTree = "<group>"; };
 		E8CAC2BA2892804F004BC29E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E8CAC2BC28928B09004BC29E /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		E8CAC2BE2893C0C4004BC29E /* RxSwiftErrorTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftErrorTrackerTests.swift; sourceTree = "<group>"; };
 		E8E89638288E74C500E00879 /* LoginFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E8963B288E74C500E00879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E8963D288E74C500E00879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				E8E89652288E74C700E00879 /* RxSwiftOperatorTests.swift */,
+				E8CAC2BE2893C0C4004BC29E /* RxSwiftErrorTrackerTests.swift */,
 			);
 			path = LoginFlowTests;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8E89653288E74C700E00879 /* RxSwiftOperatorTests.swift in Sources */,
+				E8CAC2BF2893C0C5004BC29E /* RxSwiftErrorTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
