@@ -19,7 +19,7 @@ final class LoginViewModel: ViewModelType {
     }
     
     struct Output {
-        var error: Driver<Error>
+        var error: Signal<Error>
         var login: Driver<Void>
     }
     
@@ -40,11 +40,11 @@ final class LoginViewModel: ViewModelType {
             .flatMapFirst { id, password in
                 return self.userLoginUseCase.execute(query: .init(id: id, password: password))
                     .trackError(errorTracker) // error 발생 시 errorTracker 에게 event 공유
-                    .asDriverOnErrorJustComplete() // 결국엔 error 를 무시한다는 의미
+                    .asDriver(onErrorDriveWith: .empty()) // 결국엔 error 를 무시한다는 의미
             }
         
         return Output.init(
-            error: errorTracker.asDriver(),
+            error: errorTracker.asSignal(),
             login: login
         )
     }

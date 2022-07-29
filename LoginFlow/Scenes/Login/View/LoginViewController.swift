@@ -48,7 +48,7 @@ final class LoginViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.error
-            .drive(
+            .emit(
                 onNext: { error in
                     self.view.endEditing(true)
                     self.passwordTextField.text = ""
