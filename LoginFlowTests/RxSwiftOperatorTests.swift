@@ -11,6 +11,10 @@ import RxCocoa
 
 class RxSwiftOperatorTests: XCTestCase {
 
+    override func setUp() {
+        continueAfterFailure = true
+    }
+    
     func test_map_with_error() throws {
         // arrange
         let expectedValue = [2, 3, 4, 0]
@@ -48,5 +52,50 @@ class RxSwiftOperatorTests: XCTestCase {
     
     private func increaseOne(num: Int) -> Int {
         return num + 1
+    }
+    
+    func test_emit_error_in_driver() {
+        // arrange
+        let disposeBag: DisposeBag = .init()
+        
+        let publishSubject: PublishSubject<Int> = .init()
+        let button: UIButton = .init()
+        
+        let expectedTapCount: Int = 3
+        var actualTapCount: Int = 0
+        
+        let expectedValue: Int = 0
+        var actualValue: Int = 0
+        
+        enum TestError: Error {
+            case testError
+        }
+        
+        button.rx.tap
+            .subscribe(
+                onNext: {
+                    publishSubject.onError(TestError.testError)
+                }
+            )
+            .disposed(by: disposeBag)
+        
+        publishSubject
+            .asDriver(onErrorJustReturn: -1)
+            .drive(
+                onNext: { value in
+                    actualTapCount += 1
+                    actualValue = value
+                }
+            )
+            .disposed(by: disposeBag)
+        
+        // act
+        for _ in 0..<expectedTapCount {
+            button.sendActions(for: .touchUpInside)
+        }
+        
+        // assert
+        XCTAssertEqual(expectedTapCount, actualTapCount)
+        XCTAssertEqual(expectedValue, actualValue)
     }
 }
