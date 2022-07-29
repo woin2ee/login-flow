@@ -31,8 +31,8 @@ final class LoginViewController: UIViewController {
     
     private func bindViewModel() {
         let input = LoginViewModel.Input.init(
-            loginRequest: loginButton.rx.tap.asDriver(),
-            signUpRequest: signUpButton.rx.tap.asDriver(),
+            loginRequest: loginButton.rx.tap.asSignal(),
+            signUpRequest: signUpButton.rx.tap.asSignal(),
             id: idTextField.rx.text.orEmpty.asDriver(),
             password: passwordTextField.rx.text.orEmpty.asDriver()
         )

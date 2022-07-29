@@ -12,8 +12,8 @@ import SwiftyJSON
 final class LoginViewModel: ViewModelType {
     
     struct Input {
-        var loginRequest: Driver<Void>
-        var signUpRequest: Driver<Void>
+        var loginRequest: Signal<Void>
+        var signUpRequest: Signal<Void>
         var id: Driver<String>
         var password: Driver<String>
     }
