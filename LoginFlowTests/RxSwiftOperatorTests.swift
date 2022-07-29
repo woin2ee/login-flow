@@ -61,10 +61,12 @@ class RxSwiftOperatorTests: XCTestCase {
         let publishSubject: PublishSubject<Int> = .init()
         let button: UIButton = .init()
         
-        let expectedTapCount: Int = 3
+        let tapCount: Int = 3
+        let expectedTapCount: Int = 1
         var actualTapCount: Int = 0
         
-        let expectedValue: Int = 0
+        let onErrorJustReturnValue = -1
+        let expectedValue: Int = -1
         var actualValue: Int = 0
         
         enum TestError: Error {
@@ -80,7 +82,7 @@ class RxSwiftOperatorTests: XCTestCase {
             .disposed(by: disposeBag)
         
         publishSubject
-            .asDriver(onErrorJustReturn: -1)
+            .asDriver(onErrorJustReturn: onErrorJustReturnValue)
             .drive(
                 onNext: { value in
                     actualTapCount += 1
@@ -90,7 +92,7 @@ class RxSwiftOperatorTests: XCTestCase {
             .disposed(by: disposeBag)
         
         // act
-        for _ in 0..<expectedTapCount {
+        for _ in 0..<tapCount {
             button.sendActions(for: .touchUpInside)
         }
         
