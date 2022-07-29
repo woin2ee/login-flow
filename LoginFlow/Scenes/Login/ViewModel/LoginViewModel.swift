@@ -29,6 +29,7 @@ final class LoginViewModel: ViewModelType {
         self.userLoginUseCase = userLoginUseCase
     }
     
+    // Input stream 이 Output stream 으로 연결 될 수 있도록 구성(변환이라고 표현함)
     func transform(input: Input) -> Output {
         let errorTracker = ErrorTracker.init()
         
@@ -38,7 +39,7 @@ final class LoginViewModel: ViewModelType {
             .withLatestFrom(idAndPassword)
             .flatMapFirst { id, password in
                 return self.userLoginUseCase.execute(query: .init(id: id, password: password))
-                    .trackError(errorTracker)
+                    .trackError(errorTracker) // error 발생 시 errorTracker 에게 event 위임
                     .asDriverOnErrorJustComplete()
             }
         
