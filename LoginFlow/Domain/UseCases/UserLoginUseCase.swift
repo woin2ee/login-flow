@@ -7,7 +7,6 @@
 
 import Foundation
 import RxSwift
-import SwiftyJSON
 
 protocol UserLoginUseCaseProtocol {
     func execute(query: LoginQuery) -> Observable<Void>
