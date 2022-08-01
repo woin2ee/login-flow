@@ -8,5 +8,5 @@
 import RxSwift
 
 protocol UserRepositoryProtocol {
-    func getToken(query: LoginQuery) -> Observable<String>
+    func getToken(query: LoginQuery) -> Observable<Token>
 }

@@ -17,12 +17,14 @@ final class UserRepository: UserRepositoryProtocol {
         self.networkService = networkService
     }
     
-    func getToken(query: LoginQuery) -> Observable<String> {
+    func getToken(query: LoginQuery) -> Observable<Token> {
         let path: String = "/oauth/token"
-        let query: String = "username=\(query.id)&password=\(query.password)"
+        let id = query.id
+        let password = query.password
+        let query: String = "username=\(id)&password=\(password)"
         
         return networkService.request(path, query, .post)
-            .map { json -> String in
+            .map { json -> Token in
                 guard let code = json["code"].int else {
                     throw JsonError.decodeFailure
                 }
@@ -35,7 +37,7 @@ final class UserRepository: UserRepositoryProtocol {
                     guard let token = json["data"]["accessToken"].string else {
                         throw JsonError.decodeFailure
                     }
-                    return token
+                    return .init(id: id, value: token)
                 case .badRequest:
                     guard let errorMessage = json["data"].string else {
                         throw JsonError.decodeFailure

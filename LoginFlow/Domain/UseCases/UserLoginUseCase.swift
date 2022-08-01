@@ -26,11 +26,11 @@ final class UserLoginUseCase: UserLoginUseCaseProtocol {
             .map { _ in () }
     }
     
-    private func saveKeychain(token: String) {
+    private func saveKeychain(token: Token) {
         let query: [CFString : Any] = [kSecClass : kSecClassGenericPassword,
-                                 kSecAttrService : "Service name",
-                                 kSecAttrAccount : "Account",
-                                 kSecAttrGeneric : token]
+                                 kSecAttrService : "LoginFlow",
+                                 kSecAttrAccount : token.id,
+                                 kSecAttrGeneric : token.value]
         
         SecItemAdd(query as CFDictionary, nil)
     }
