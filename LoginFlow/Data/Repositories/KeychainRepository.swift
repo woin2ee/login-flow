@@ -16,7 +16,7 @@ final class KeychainRepository: KeychainRepositoryProtocol {
                                  kSecAttrAccount : token.id,
                                  kSecAttrGeneric : token.value]
         
-        if self.delete(id: token.id) == false { return false }
+        self.delete(id: token.id)
         
         return SecItemAdd(query as CFDictionary, nil) == errSecSuccess
     }
@@ -43,6 +43,7 @@ final class KeychainRepository: KeychainRepositoryProtocol {
         return .init(id: id, value: tokenValue)
     }
     
+    @discardableResult
     func delete(id: String) -> Bool {
         let query: [CFString : Any] = [kSecClass : kSecClassGenericPassword,
                                  kSecAttrService : serviceName,
