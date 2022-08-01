@@ -40,8 +40,8 @@ final class HomeViewModel: ViewModelType {
         
         let logout = input.logoutRequest
             .flatMapFirst {
-                    return self.userLogoutUseCase.execute()
-                        .asDriver(onErrorDriveWith: .empty())
+                self.userLogoutUseCase.execute()
+                    .asDriver(onErrorDriveWith: .empty())
             }
         
         return Output.init(

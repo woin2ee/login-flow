@@ -38,7 +38,7 @@ final class LoginViewModel: ViewModelType {
         let login = input.loginRequest
             .withLatestFrom(idAndPassword)
             .flatMapFirst { id, password in
-                return self.userLoginUseCase.execute(query: .init(id: id, password: password))
+                self.userLoginUseCase.execute(query: .init(id: id, password: password))
                     .trackError(errorTracker) // error 발생 시 errorTracker 에게 event 공유
                     .asDriver(onErrorDriveWith: .empty()) // 결국엔 error 를 무시한다는 의미
             }
