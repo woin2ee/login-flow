@@ -16,6 +16,8 @@ final class KeychainRepository: KeychainRepositoryProtocol {
                                  kSecAttrAccount : token.id,
                                  kSecAttrGeneric : token.value]
         
+        if self.delete(id: token.id) == false { return false }
+        
         return SecItemAdd(query as CFDictionary, nil) == errSecSuccess
     }
     
