@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E801B1A72897D360005E52F1 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E801B1A62897D360005E52F1 /* KeychainError.swift */; };
 		E86E7EC2288FC04F00D9D194 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7EC1288FC04F00D9D194 /* UserRepositoryProtocol.swift */; };
 		E86E7EC4288FC08700D9D194 /* UserLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7EC3288FC08700D9D194 /* UserLoginUseCase.swift */; };
 		E86E7EC7288FC11900D9D194 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7EC6288FC11900D9D194 /* Token.swift */; };
@@ -22,6 +23,8 @@
 		E8CAC2BB2892804F004BC29E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2BA2892804F004BC29E /* NetworkError.swift */; };
 		E8CAC2BD28928B09004BC29E /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2BC28928B09004BC29E /* ErrorTracker.swift */; };
 		E8CAC2BF2893C0C5004BC29E /* RxSwiftErrorTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2BE2893C0C4004BC29E /* RxSwiftErrorTrackerTests.swift */; };
+		E8CAC2C128968449004BC29E /* KeychainRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2C028968449004BC29E /* KeychainRepositoryProtocol.swift */; };
+		E8CAC2C3289685CB004BC29E /* KeychainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2C2289685CB004BC29E /* KeychainRepository.swift */; };
 		E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963B288E74C500E00879 /* AppDelegate.swift */; };
 		E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963D288E74C500E00879 /* SceneDelegate.swift */; };
 		E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963F288E74C500E00879 /* HomeViewController.swift */; };
@@ -73,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E801B1A62897D360005E52F1 /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		E86E7EC1288FC04F00D9D194 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
 		E86E7EC3288FC08700D9D194 /* UserLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginUseCase.swift; sourceTree = "<group>"; };
 		E86E7EC6288FC11900D9D194 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 		E8CAC2BA2892804F004BC29E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E8CAC2BC28928B09004BC29E /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
 		E8CAC2BE2893C0C4004BC29E /* RxSwiftErrorTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftErrorTrackerTests.swift; sourceTree = "<group>"; };
+		E8CAC2C028968449004BC29E /* KeychainRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainRepositoryProtocol.swift; sourceTree = "<group>"; };
+		E8CAC2C2289685CB004BC29E /* KeychainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainRepository.swift; sourceTree = "<group>"; };
 		E8E89638288E74C500E00879 /* LoginFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E8963B288E74C500E00879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E8963D288E74C500E00879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				E86E7EC1288FC04F00D9D194 /* UserRepositoryProtocol.swift */,
+				E8CAC2C028968449004BC29E /* KeychainRepositoryProtocol.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -187,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				E86E7ECF288FD03000D9D194 /* UserRepository.swift */,
+				E8CAC2C2289685CB004BC29E /* KeychainRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -215,6 +223,7 @@
 				E8CAC2B32892667A004BC29E /* SignUpError.swift */,
 				E8CAC2B828927FBB004BC29E /* JsonError.swift */,
 				E8CAC2BA2892804F004BC29E /* NetworkError.swift */,
+				E801B1A62897D360005E52F1 /* KeychainError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -473,7 +482,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8CAC2BB2892804F004BC29E /* NetworkError.swift in Sources */,
+				E801B1A72897D360005E52F1 /* KeychainError.swift in Sources */,
 				E8CAC2B62892793D004BC29E /* HTTPStatusCode.swift in Sources */,
+				E8CAC2C128968449004BC29E /* KeychainRepositoryProtocol.swift in Sources */,
 				E86E7ED0288FD03000D9D194 /* UserRepository.swift in Sources */,
 				E86E7EC2288FC04F00D9D194 /* UserRepositoryProtocol.swift in Sources */,
 				E8E89671288E7E6100E00879 /* LoginViewController.swift in Sources */,
@@ -486,6 +497,7 @@
 				E8E89677288E868600E00879 /* LoginViewModel.swift in Sources */,
 				E86E7EC7288FC11900D9D194 /* Token.swift in Sources */,
 				E8CAC2BD28928B09004BC29E /* ErrorTracker.swift in Sources */,
+				E8CAC2C3289685CB004BC29E /* KeychainRepository.swift in Sources */,
 				E86E7ED2288FD55300D9D194 /* LoginQuery.swift in Sources */,
 				E86E7ED5288FE3A600D9D194 /* NetworkService.swift in Sources */,
 				E8CAC2B928927FBB004BC29E /* JsonError.swift in Sources */,

@@ -15,23 +15,23 @@ protocol UserLoginUseCaseProtocol {
 final class UserLoginUseCase: UserLoginUseCaseProtocol {
     
     private var userRepository: UserRepositoryProtocol
+    private var keychainRepository: KeychainRepositoryProtocol
     
-    init(userRepository: UserRepositoryProtocol) {
+    init(
+        userRepository: UserRepositoryProtocol,
+        keychainRepository: KeychainRepositoryProtocol
+    ) {
         self.userRepository = userRepository
+        self.keychainRepository = keychainRepository
     }
     
     func execute(query: LoginQuery) -> Observable<Void> {
         return userRepository.getToken(query: query)
-            .do(onNext: { token in self.saveKeychain(token: token) })
+            .do(onNext: {
+                if self.keychainRepository.save(token: $0) == false {
+                    throw KeychainError.saveFailure
+                }
+            })
             .map { _ in () }
-    }
-    
-    private func saveKeychain(token: Token) {
-        let query: [CFString : Any] = [kSecClass : kSecClassGenericPassword,
-                                 kSecAttrService : "LoginFlow",
-                                 kSecAttrAccount : token.id,
-                                 kSecAttrGeneric : token.value]
-        
-        SecItemAdd(query as CFDictionary, nil)
     }
 }

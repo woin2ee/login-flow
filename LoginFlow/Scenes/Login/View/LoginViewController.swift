@@ -13,7 +13,14 @@ final class LoginViewController: UIViewController {
     
     private let disposeBag = DisposeBag.init()
     
-    private var viewModel: LoginViewModel! = .init(userLoginUseCase: UserLoginUseCase(userRepository: UserRepository(networkService: NetworkService())))
+    private var viewModel: LoginViewModel! = LoginViewModel(
+        userLoginUseCase: UserLoginUseCase(
+            userRepository: UserRepository(
+                networkService: NetworkService()
+            ),
+            keychainRepository: KeychainRepository()
+        )
+    )
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField! {
