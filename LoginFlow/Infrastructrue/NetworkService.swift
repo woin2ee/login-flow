@@ -31,8 +31,10 @@ final class NetworkService: NetworkServiceProtocol {
         
         var urlRequest = URLRequest.init(url: url)
         urlRequest.httpMethod = method.rawValue
+        urlRequest.timeoutInterval = .init(10)
         
         return URLSession.shared.rx.response(request: urlRequest)
+            .retry(3)
             .map { _, data -> JSON in try JSON.init(data: data) }
     }
 }
