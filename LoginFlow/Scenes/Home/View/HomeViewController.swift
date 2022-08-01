@@ -18,10 +18,12 @@ final class HomeViewController: UIViewController {
             keychainRepository: KeychainRepository(),
             userRepository: UserRepository(
                 networkService: NetworkService()
-            )
+            ),
+            userDefaultRepository: UserDefaultsRepository()
         ),
         userLogoutUseCase: UserLogoutUseCase(
-            keychainRepository: KeychainRepository()
+            keychainRepository: KeychainRepository(),
+            userDefaultRepository: UserDefaultsRepository()
         )
     )
     

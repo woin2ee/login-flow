@@ -34,7 +34,7 @@ final class HomeViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let isloggedIn = input.viewWillAppear
             .flatMapLatest {
-                self.tokenValidationUseCase.execute(id: "jaewon123")
+                self.tokenValidationUseCase.execute()
                     .asDriver(onErrorJustReturn: false)
             }
         

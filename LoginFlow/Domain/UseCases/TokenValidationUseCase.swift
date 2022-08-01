@@ -9,24 +9,31 @@ import Foundation
 import RxSwift
 
 protocol TokenValidationUseCaseProtocol {
-    func execute(id: String) -> Observable<Bool>
+    func execute() -> Observable<Bool>
 }
 
 final class TokenValidationUseCase: TokenValidationUseCaseProtocol {
     
     private var keychainRepository: KeychainRepositoryProtocol
     private var userRepository: UserRepositoryProtocol
+    private var userDefaultRepository: UserDefaultsRepositoryProtocol
     
     init(
         keychainRepository: KeychainRepositoryProtocol,
-        userRepository: UserRepositoryProtocol
+        userRepository: UserRepositoryProtocol,
+        userDefaultRepository: UserDefaultsRepositoryProtocol
     ) {
         self.keychainRepository = keychainRepository
         self.userRepository = userRepository
+        self.userDefaultRepository = userDefaultRepository
     }
     
-    func execute(id: String) -> Observable<Bool> {
-        guard let token = keychainRepository.get(id: id) else { return .of(false) }
+    func execute() -> Observable<Bool> {
+        guard
+            let id = userDefaultRepository.getCurrentUserId(),
+            let token = keychainRepository.get(id: id)
+        else { return .of(false) }
+        
         return userRepository.checkToken(token: token)
     }
 }

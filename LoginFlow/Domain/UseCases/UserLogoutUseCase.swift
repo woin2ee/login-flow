@@ -14,15 +14,20 @@ protocol UserLogoutUseCaseProtocol {
 final class UserLogoutUseCase: UserLogoutUseCaseProtocol {
     
     private var keychainRepository: KeychainRepositoryProtocol
+    private var userDefaultRepository: UserDefaultsRepositoryProtocol
     
-    init(keychainRepository: KeychainRepositoryProtocol) {
+    init(
+        keychainRepository: KeychainRepositoryProtocol,
+        userDefaultRepository: UserDefaultsRepositoryProtocol
+    ) {
         self.keychainRepository = keychainRepository
+        self.userDefaultRepository = userDefaultRepository
     }
     
     func execute() -> Observable<Void> {
-        
-        // FIXME: UserDefault 사용해서 ID 가져오기
-        let id = "jaewon123"
+        guard let id = userDefaultRepository.getCurrentUserId() else {
+            return .error(KeychainError.deleteFailure)
+        }
         
         if keychainRepository.delete(id: id) {
             return .of(())
