@@ -11,14 +11,28 @@ import RxCocoa
 final class HomeViewModel: ViewModelType {
     
     struct Input {
-        
+        var viewWillAppear: Signal<Void>
     }
     
     struct Output {
-//        var isloggedIn: Driver<Bool>
+        var isloggedIn: Driver<Bool>
+    }
+    
+    private var tokenValidationUseCase: TokenValidationUseCaseProtocol
+    
+    init(tokenValidationUseCase: TokenValidationUseCaseProtocol) {
+        self.tokenValidationUseCase = tokenValidationUseCase
     }
     
     func transform(input: Input) -> Output {
-        return Output.init()
+        let isloggedIn = input.viewWillAppear
+            .flatMapLatest {
+                self.tokenValidationUseCase.execute(id: "jaewon123")
+                    .asDriver(onErrorJustReturn: false)
+            }
+        
+        return Output.init(
+            isloggedIn: isloggedIn
+        )
     }
 }

@@ -46,4 +46,9 @@ final class UserRepository: UserRepositoryProtocol {
                 }
             }
     }
+    
+    func checkToken(token: Token) -> Observable<Bool> {
+        // FIXME: NetworkService 로 요청해서 유효한지 검사
+        return .of(true)
+    }
 }

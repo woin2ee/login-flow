@@ -22,6 +22,8 @@ final class LoginViewController: UIViewController {
         )
     )
     
+    // MARK: UI Component
+    
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
@@ -30,6 +32,8 @@ final class LoginViewController: UIViewController {
     }
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +74,8 @@ final class LoginViewController: UIViewController {
             )
             .disposed(by: disposeBag)
     }
+    
+    // MARK: - Action
     
     @IBAction func didTapDismissButton(_ sender: UIButton) {
         self.dismiss(animated: false)
