@@ -11,4 +11,5 @@ enum KeychainError: Error {
     case saveFailure
     case updateFailure
     case getFailure
+    case deleteFailure
 }

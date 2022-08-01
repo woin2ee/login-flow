@@ -19,12 +19,25 @@ final class HomeViewController: UIViewController {
             userRepository: UserRepository(
                 networkService: NetworkService()
             )
+        ),
+        userLogoutUseCase: UserLogoutUseCase(
+            keychainRepository: KeychainRepository()
         )
     )
     
     // MARK: - UI Component
     
-    @IBOutlet weak var loginButton: UIBarButtonItem!
+    @IBOutlet weak var loginButton: UIButton! {
+        didSet {
+            loginButton.addAction(
+                UIAction.init(handler: { _ in
+                    self.showLoginView()
+                }),
+                for: .touchUpInside
+            )
+        }
+    }
+    @IBOutlet weak var logoutButton: UIButton!
     
     // MARK: - Life Cycle
     
@@ -37,7 +50,8 @@ final class HomeViewController: UIViewController {
         let input = HomeViewModel.Input.init(
             viewWillAppear: self.rx.sentMessage(#selector(viewWillAppear(_:)))
                 .map { _ in }
-                .asSignal(onErrorJustReturn: ())
+                .asSignal(onErrorJustReturn: ()),
+            logoutRequest: logoutButton.rx.tap.asSignal()
         )
         let output = viewModel.transform(input: input)
         
@@ -45,20 +59,27 @@ final class HomeViewController: UIViewController {
             .drive(
                 onNext: { isloggedIn in
                     if isloggedIn {
-                        self.loginButton.title = "로그아웃"
+                        self.loginButton.isHidden = true
+                        self.logoutButton.isHidden = false
                     } else {
-                        self.loginButton.title = "로그인"
+                        self.loginButton.isHidden = false
+                        self.logoutButton.isHidden = true
                     }
+                }
+            )
+            .disposed(by: disposeBag)
+        
+        output.logout
+            .drive(
+                onNext: {
+                    self.loginButton.isHidden = false
+                    self.logoutButton.isHidden = true
                 }
             )
             .disposed(by: disposeBag)
     }
     
     // MARK: - Action
-    
-    @IBAction func didTapLoginButton(_ sender: UIBarButtonItem) {
-        self.showLoginView()
-    }
     
     private func showLoginView() {
         let storyboard = UIStoryboard.init(name: "Login", bundle: nil)

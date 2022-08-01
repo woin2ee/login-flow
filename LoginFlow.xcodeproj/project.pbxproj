@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E801B1A72897D360005E52F1 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E801B1A62897D360005E52F1 /* KeychainError.swift */; };
 		E801B1A92897DF39005E52F1 /* TokenValidationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E801B1A82897DF39005E52F1 /* TokenValidationUseCase.swift */; };
+		E801B1AB2897FB50005E52F1 /* UserLogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E801B1AA2897FB50005E52F1 /* UserLogoutUseCase.swift */; };
 		E86E7EC2288FC04F00D9D194 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7EC1288FC04F00D9D194 /* UserRepositoryProtocol.swift */; };
 		E86E7EC4288FC08700D9D194 /* UserLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7EC3288FC08700D9D194 /* UserLoginUseCase.swift */; };
 		E86E7EC7288FC11900D9D194 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7EC6288FC11900D9D194 /* Token.swift */; };
@@ -79,6 +80,7 @@
 /* Begin PBXFileReference section */
 		E801B1A62897D360005E52F1 /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		E801B1A82897DF39005E52F1 /* TokenValidationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenValidationUseCase.swift; sourceTree = "<group>"; };
+		E801B1AA2897FB50005E52F1 /* UserLogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogoutUseCase.swift; sourceTree = "<group>"; };
 		E86E7EC1288FC04F00D9D194 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
 		E86E7EC3288FC08700D9D194 /* UserLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginUseCase.swift; sourceTree = "<group>"; };
 		E86E7EC6288FC11900D9D194 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				E86E7EC3288FC08700D9D194 /* UserLoginUseCase.swift */,
 				E801B1A82897DF39005E52F1 /* TokenValidationUseCase.swift */,
+				E801B1AA2897FB50005E52F1 /* UserLogoutUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				E86E7ED0288FD03000D9D194 /* UserRepository.swift in Sources */,
 				E86E7EC2288FC04F00D9D194 /* UserRepositoryProtocol.swift in Sources */,
 				E8E89671288E7E6100E00879 /* LoginViewController.swift in Sources */,
+				E801B1AB2897FB50005E52F1 /* UserLogoutUseCase.swift in Sources */,
 				E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */,
 				E8E8969A288EFDD200E00879 /* HomeViewModel.swift in Sources */,
 				E86E7EC4288FC08700D9D194 /* UserLoginUseCase.swift in Sources */,

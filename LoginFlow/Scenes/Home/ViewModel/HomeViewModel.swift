@@ -12,16 +12,23 @@ final class HomeViewModel: ViewModelType {
     
     struct Input {
         var viewWillAppear: Signal<Void>
+        var logoutRequest: Signal<Void>
     }
     
     struct Output {
         var isloggedIn: Driver<Bool>
+        var logout: Driver<Void>
     }
     
     private var tokenValidationUseCase: TokenValidationUseCaseProtocol
+    private var userLogoutUseCase: UserLogoutUseCaseProtocol
     
-    init(tokenValidationUseCase: TokenValidationUseCaseProtocol) {
+    init(
+        tokenValidationUseCase: TokenValidationUseCaseProtocol,
+        userLogoutUseCase: UserLogoutUseCaseProtocol
+    ) {
         self.tokenValidationUseCase = tokenValidationUseCase
+        self.userLogoutUseCase = userLogoutUseCase
     }
     
     func transform(input: Input) -> Output {
@@ -31,8 +38,15 @@ final class HomeViewModel: ViewModelType {
                     .asDriver(onErrorJustReturn: false)
             }
         
+        let logout = input.logoutRequest
+            .flatMapFirst {
+                    return self.userLogoutUseCase.execute()
+                        .asDriver(onErrorDriveWith: .empty())
+            }
+        
         return Output.init(
-            isloggedIn: isloggedIn
+            isloggedIn: isloggedIn,
+            logout: logout
         )
     }
 }
