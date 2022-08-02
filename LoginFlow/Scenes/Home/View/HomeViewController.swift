@@ -32,7 +32,7 @@ final class HomeViewController: UIViewController {
         )
     )
     
-    // MARK: - UI Component
+    // MARK: - UI Components
     
     @IBOutlet weak var loginButton: UIButton! {
         didSet {
@@ -83,7 +83,7 @@ final class HomeViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    // MARK: - Action
+    // MARK: - Actions
     
     private func showLoginView() {
         let storyboard = UIStoryboard.init(name: "Login", bundle: nil)

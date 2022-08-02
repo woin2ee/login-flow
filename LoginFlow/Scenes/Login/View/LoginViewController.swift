@@ -23,7 +23,7 @@ final class LoginViewController: UIViewController {
         )
     )
     
-    // MARK: UI Component
+    // MARK: - UI Components
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField! {
@@ -82,7 +82,7 @@ final class LoginViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    // MARK: - Action
+    // MARK: - Actions
     
     @IBAction func didTapCancelButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: false)
