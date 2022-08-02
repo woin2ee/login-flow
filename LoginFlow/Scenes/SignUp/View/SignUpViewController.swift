@@ -54,29 +54,22 @@ final class SignUpViewController: UIViewController {
         )
         let output = viewModel.transform(input: input)
         
-        output.signUp
-            .emit(onNext: { if $0 { self.dismiss(animated: false) } })
-            .disposed(by: disposeBag)
-        
-        output.emailValidation
-            .skip(1)
-            .drive(onNext: {
-                self.signUpButton.isEnabled = $0
-                self.emailValidationLabel.isHidden = $0
-            })
-            .disposed(by: disposeBag)
-        
-        output.passwordValidation
-            .drive(onNext: { self.signUpButton.isEnabled = $0 })
-            .disposed(by: disposeBag)
-        
-        output.error
-            .emit(
-                onNext: { error in
-                    print(error)
-                }
-            )
-            .disposed(by: disposeBag)
+        [output.signUp
+            .emit(onNext: { if $0 { self.dismiss(animated: false) } }),
+         output.emailValidation
+             .skip(1)
+             .drive(onNext: { self.emailValidationLabel.isHidden = $0 }),
+         output.passwordValidation
+             .drive(),
+         output.signUpButtonEnable
+             .drive(onNext: { self.signUpButton.isEnabled = $0 }),
+         output.error
+             .emit(
+                 onNext: { error in
+                     print(error)
+                 }
+             )]
+            .forEach { $0.disposed(by: disposeBag) }
     }
     
     // MARK: - Actions

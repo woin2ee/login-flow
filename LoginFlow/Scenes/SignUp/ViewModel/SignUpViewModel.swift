@@ -22,6 +22,7 @@ final class SignUpViewModel: ViewModelType {
         var signUp: Signal<Bool>
         var emailValidation: Driver<Bool>
         var passwordValidation: Driver<Bool>
+        var signUpButtonEnable: Driver<Bool>
         var error: Signal<Error>
     }
     
@@ -45,6 +46,8 @@ final class SignUpViewModel: ViewModelType {
             .map { self.validateEmail($0) }
         let passwordValidation = Driver.combineLatest(input.password, input.rePassword)
             .map { self.validatePassword($0, $1) }
+        let signUpButtonEnable = Driver.combineLatest(emailValidation, passwordValidation)
+            .map { $0 && $1 }
         let signUp = input.signUpRequest
             .withLatestFrom(signUpInfo)
             .flatMapFirst { id, email, password in
@@ -66,6 +69,7 @@ final class SignUpViewModel: ViewModelType {
             signUp: signUp,
             emailValidation: emailValidation,
             passwordValidation: passwordValidation,
+            signUpButtonEnable: signUpButtonEnable,
             error: errorTracker.asSignal()
         )
     }
