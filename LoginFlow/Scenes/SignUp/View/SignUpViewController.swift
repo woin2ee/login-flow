@@ -21,19 +21,13 @@ final class SignUpViewController: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailValidationLabel: UILabel! {
-        didSet {
-            emailValidationLabel.isHidden = true
-        }
+        didSet { emailValidationLabel.isHidden = true }
     }
     @IBOutlet weak var passwordTextField: UITextField! {
-        didSet {
-            passwordTextField.isSecureTextEntry = true
-        }
+        didSet { passwordTextField.isSecureTextEntry = true }
     }
     @IBOutlet weak var rePasswordTextField: UITextField! {
-        didSet {
-            rePasswordTextField.isSecureTextEntry = true
-        }
+        didSet { rePasswordTextField.isSecureTextEntry = true }
     }
     @IBOutlet weak var signUpButton: UIButton!
     

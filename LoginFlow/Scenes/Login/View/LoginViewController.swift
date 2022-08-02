@@ -27,9 +27,7 @@ final class LoginViewController: UIViewController {
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField! {
-        didSet {
-            passwordTextField.isSecureTextEntry = true
-        }
+        didSet { passwordTextField.isSecureTextEntry = true }
     }
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton! {
