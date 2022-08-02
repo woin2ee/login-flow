@@ -29,9 +29,6 @@ final class SignUpViewModel: ViewModelType {
     
     private var userSignUpUseCase: UserSignUpUseCaseProtocol
     
-    private let minPasswordLength: Int = 5
-    private let maxPasswordLength: Int = 15
-    
     init(userSignUpUseCase: UserSignUpUseCaseProtocol) {
         self.userSignUpUseCase = userSignUpUseCase
     }
@@ -90,12 +87,10 @@ final class SignUpViewModel: ViewModelType {
     }
     
     private func validatePassword(_ password: String, _ rePassword: String) -> Bool {
-        guard
-            password == rePassword,
-            password.count >= minPasswordLength,
-            password.count <= maxPasswordLength
-        else { return false }
-        return true
+        guard password == rePassword else { return false }
+        
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{5,15}"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
     }
     
     private func validateEmail(_ email: String) -> Bool {
