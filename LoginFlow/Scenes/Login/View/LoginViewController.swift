@@ -32,7 +32,16 @@ final class LoginViewController: UIViewController {
         }
     }
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton! {
+        didSet {
+            signUpButton.addAction(
+                UIAction.init(handler: { _ in
+                    self.showSignUpView()
+                }),
+                for: .touchUpInside
+            )
+        }
+    }
     
     // MARK: - Life Cycle
     
@@ -44,7 +53,6 @@ final class LoginViewController: UIViewController {
     private func bindViewModel() {
         let input = LoginViewModel.Input.init(
             loginRequest: loginButton.rx.tap.asSignal(),
-            signUpRequest: signUpButton.rx.tap.asSignal(),
             id: idTextField.rx.text.orEmpty.asDriver(),
             password: passwordTextField.rx.text.orEmpty.asDriver()
         )
@@ -96,5 +104,12 @@ final class LoginViewController: UIViewController {
         alertController.addAction(defaultAction)
         
         present(alertController, animated: true)
+    }
+    
+    private func showSignUpView() {
+        let storyboard = UIStoryboard.init(name: "SignUp", bundle: nil)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "SignUpNavigationController")
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: false)
     }
 }
