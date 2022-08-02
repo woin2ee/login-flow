@@ -32,6 +32,8 @@
 		E8E4FCB22898F10C00A12254 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4FCB12898F10C00A12254 /* SignUpViewController.swift */; };
 		E8E4FCB42898F11300A12254 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E4FCB32898F11300A12254 /* SignUp.storyboard */; };
 		E8E4FCB62898F11C00A12254 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4FCB52898F11C00A12254 /* SignUpViewModel.swift */; };
+		E8E4FCB82898FDD600A12254 /* UserSignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4FCB72898FDD600A12254 /* UserSignUpUseCase.swift */; };
+		E8E4FCBA2898FF3C00A12254 /* SignUpQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4FCB92898FF3C00A12254 /* SignUpQuery.swift */; };
 		E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963B288E74C500E00879 /* AppDelegate.swift */; };
 		E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963D288E74C500E00879 /* SceneDelegate.swift */; };
 		E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963F288E74C500E00879 /* HomeViewController.swift */; };
@@ -106,6 +108,8 @@
 		E8E4FCB12898F10C00A12254 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E8E4FCB32898F11300A12254 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		E8E4FCB52898F11C00A12254 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		E8E4FCB72898FDD600A12254 /* UserSignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpUseCase.swift; sourceTree = "<group>"; };
+		E8E4FCB92898FF3C00A12254 /* SignUpQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpQuery.swift; sourceTree = "<group>"; };
 		E8E89638288E74C500E00879 /* LoginFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E8963B288E74C500E00879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E8963D288E74C500E00879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				E86E7EC3288FC08700D9D194 /* UserLoginUseCase.swift */,
 				E801B1A82897DF39005E52F1 /* TokenValidationUseCase.swift */,
 				E801B1AA2897FB50005E52F1 /* UserLogoutUseCase.swift */,
+				E8E4FCB72898FDD600A12254 /* UserSignUpUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			children = (
 				E86E7EC6288FC11900D9D194 /* Token.swift */,
 				E86E7ED1288FD55300D9D194 /* LoginQuery.swift */,
+				E8E4FCB92898FF3C00A12254 /* SignUpQuery.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 				E8CAC2B62892793D004BC29E /* HTTPStatusCode.swift in Sources */,
 				E8CAC2C128968449004BC29E /* KeychainRepositoryProtocol.swift in Sources */,
 				E801B1A92897DF39005E52F1 /* TokenValidationUseCase.swift in Sources */,
+				E8E4FCBA2898FF3C00A12254 /* SignUpQuery.swift in Sources */,
 				E86E7ED0288FD03000D9D194 /* UserRepository.swift in Sources */,
 				E86E7EC2288FC04F00D9D194 /* UserRepositoryProtocol.swift in Sources */,
 				E8E89671288E7E6100E00879 /* LoginViewController.swift in Sources */,
@@ -543,6 +550,7 @@
 				E8E4FCB62898F11C00A12254 /* SignUpViewModel.swift in Sources */,
 				E8CAC2B42892667A004BC29E /* LoginError.swift in Sources */,
 				E8E89696288E98CA00E00879 /* ViewModelType.swift in Sources */,
+				E8E4FCB82898FDD600A12254 /* UserSignUpUseCase.swift in Sources */,
 				E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */,
 				E8E89677288E868600E00879 /* LoginViewModel.swift in Sources */,
 				E86E7EC7288FC11900D9D194 /* Token.swift in Sources */,
