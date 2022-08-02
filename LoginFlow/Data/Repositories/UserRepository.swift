@@ -42,7 +42,7 @@ final class UserRepository: UserRepositoryProtocol {
                     guard let errorMessage = json["data"].string else {
                         throw JsonError.decodeFailure
                     }
-                    throw SignUpError.init(description: errorMessage)
+                    throw LoginError.init(description: errorMessage)
                 }
             }
     }

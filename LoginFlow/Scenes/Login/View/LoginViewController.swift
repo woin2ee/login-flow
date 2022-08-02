@@ -66,10 +66,10 @@ final class LoginViewController: UIViewController {
                     self.passwordTextField.text = ""
                     self.passwordTextField.sendActions(for: .valueChanged)
                     
-                    if let error = error as? SignUpError {
+                    if let error = error as? LoginError {
                         self.showAlert(message: error.description)
                     } else {
-                        self.showAlert(message: SignUpError.defaultDescription)
+                        self.showAlert(message: LoginError.defaultDescription)
                     }
                 }
             )
