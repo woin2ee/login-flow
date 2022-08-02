@@ -34,6 +34,7 @@
 		E8E4FCB62898F11C00A12254 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4FCB52898F11C00A12254 /* SignUpViewModel.swift */; };
 		E8E4FCB82898FDD600A12254 /* UserSignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4FCB72898FDD600A12254 /* UserSignUpUseCase.swift */; };
 		E8E4FCBA2898FF3C00A12254 /* SignUpQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4FCB92898FF3C00A12254 /* SignUpQuery.swift */; };
+		E8E4FCBC28990E2A00A12254 /* SignUpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4FCBB28990E2A00A12254 /* SignUpError.swift */; };
 		E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963B288E74C500E00879 /* AppDelegate.swift */; };
 		E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963D288E74C500E00879 /* SceneDelegate.swift */; };
 		E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963F288E74C500E00879 /* HomeViewController.swift */; };
@@ -110,6 +111,7 @@
 		E8E4FCB52898F11C00A12254 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		E8E4FCB72898FDD600A12254 /* UserSignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpUseCase.swift; sourceTree = "<group>"; };
 		E8E4FCB92898FF3C00A12254 /* SignUpQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpQuery.swift; sourceTree = "<group>"; };
+		E8E4FCBB28990E2A00A12254 /* SignUpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpError.swift; sourceTree = "<group>"; };
 		E8E89638288E74C500E00879 /* LoginFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E8963B288E74C500E00879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E8963D288E74C500E00879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				E8CAC2B828927FBB004BC29E /* JsonError.swift */,
 				E8CAC2BA2892804F004BC29E /* NetworkError.swift */,
 				E801B1A62897D360005E52F1 /* KeychainError.swift */,
+				E8E4FCBB28990E2A00A12254 /* SignUpError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				E8E4FCB82898FDD600A12254 /* UserSignUpUseCase.swift in Sources */,
 				E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */,
 				E8E89677288E868600E00879 /* LoginViewModel.swift in Sources */,
+				E8E4FCBC28990E2A00A12254 /* SignUpError.swift in Sources */,
 				E86E7EC7288FC11900D9D194 /* Token.swift in Sources */,
 				E8CAC2BD28928B09004BC29E /* ErrorTracker.swift in Sources */,
 				E8CAC2C3289685CB004BC29E /* KeychainRepository.swift in Sources */,
