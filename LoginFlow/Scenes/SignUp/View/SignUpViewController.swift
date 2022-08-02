@@ -20,8 +20,16 @@ final class SignUpViewController: UIViewController {
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var rePasswordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
+    @IBOutlet weak var rePasswordTextField: UITextField! {
+        didSet {
+            rePasswordTextField.isSecureTextEntry = true
+        }
+    }
     @IBOutlet weak var signUpButton: UIButton!
     
     // MARK: - Life Cycle
