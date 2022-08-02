@@ -20,6 +20,11 @@ final class SignUpViewController: UIViewController {
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailValidationLabel: UILabel! {
+        didSet {
+            emailValidationLabel.isHidden = true
+        }
+    }
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
             passwordTextField.isSecureTextEntry = true
@@ -51,6 +56,14 @@ final class SignUpViewController: UIViewController {
         
         output.signUp
             .emit(onNext: { if $0 { self.dismiss(animated: false) } })
+            .disposed(by: disposeBag)
+        
+        output.emailValidation
+            .skip(1)
+            .drive(onNext: {
+                self.signUpButton.isEnabled = $0
+                self.emailValidationLabel.isHidden = $0
+            })
             .disposed(by: disposeBag)
         
         output.passwordValidation

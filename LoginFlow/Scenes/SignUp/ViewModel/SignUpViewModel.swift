@@ -20,6 +20,7 @@ final class SignUpViewModel: ViewModelType {
     
     struct Output {
         var signUp: Signal<Bool>
+        var emailValidation: Driver<Bool>
         var passwordValidation: Driver<Bool>
         var error: Signal<Error>
     }
@@ -40,6 +41,8 @@ final class SignUpViewModel: ViewModelType {
             input.email,
             input.password
         )
+        let emailValidation = input.email
+            .map { self.validateEmail($0) }
         let passwordValidation = Driver.combineLatest(input.password, input.rePassword)
             .map { self.validatePassword($0, $1) }
         let signUp = input.signUpRequest
@@ -61,10 +64,13 @@ final class SignUpViewModel: ViewModelType {
         
         return Output.init(
             signUp: signUp,
+            emailValidation: emailValidation,
             passwordValidation: passwordValidation,
             error: errorTracker.asSignal()
         )
     }
+    
+    // MARK: - Private
     
     private func validatePassword(_ password: String, _ rePassword: String) -> Bool {
         guard
@@ -73,5 +79,10 @@ final class SignUpViewModel: ViewModelType {
             password.count <= maxPasswordLength
         else { return false }
         return true
+    }
+    
+    private func validateEmail(_ email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
     }
 }
