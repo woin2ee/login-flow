@@ -29,6 +29,8 @@ final class UserLogoutUseCase: UserLogoutUseCaseProtocol {
             return .error(KeychainError.deleteFailure)
         }
         
+        userDefaultRepository.removeCurrentUserId()
+        
         if keychainRepository.delete(id: id) {
             return .of(())
         } else {
