@@ -9,6 +9,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+private enum ButtonType {
+    case login
+    case logout
+}
+
 final class HomeViewController: UIViewController {
     
     private let disposeBag: DisposeBag = .init()
@@ -61,11 +66,9 @@ final class HomeViewController: UIViewController {
             .drive(
                 onNext: { isloggedIn in
                     if isloggedIn {
-                        self.loginButton.isHidden = true
-                        self.logoutButton.isHidden = false
+                        self.changeButton(to: .logout)
                     } else {
-                        self.loginButton.isHidden = false
-                        self.logoutButton.isHidden = true
+                        self.changeButton(to: .login)
                     }
                 }
             )
@@ -74,8 +77,7 @@ final class HomeViewController: UIViewController {
         output.logout
             .drive(
                 onNext: {
-                    self.loginButton.isHidden = false
-                    self.logoutButton.isHidden = true
+                    self.changeButton(to: .login)
                 }
             )
             .disposed(by: disposeBag)
@@ -88,5 +90,16 @@ final class HomeViewController: UIViewController {
         let navigationController = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
         navigationController.modalPresentationStyle = .fullScreen
         self.present(navigationController, animated: false)
+    }
+    
+    private func changeButton(to buttonType: ButtonType) {
+        switch buttonType {
+        case .login:
+            self.loginButton.isHidden = false
+            self.logoutButton.isHidden = true
+        case .logout:
+            self.loginButton.isHidden = true
+            self.logoutButton.isHidden = false
+        }
     }
 }
