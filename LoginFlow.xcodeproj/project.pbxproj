@@ -29,6 +29,9 @@
 		E8CAC2BF2893C0C5004BC29E /* RxSwiftErrorTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2BE2893C0C4004BC29E /* RxSwiftErrorTrackerTests.swift */; };
 		E8CAC2C128968449004BC29E /* KeychainRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2C028968449004BC29E /* KeychainRepositoryProtocol.swift */; };
 		E8CAC2C3289685CB004BC29E /* KeychainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CAC2C2289685CB004BC29E /* KeychainRepository.swift */; };
+		E8E4FCB22898F10C00A12254 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4FCB12898F10C00A12254 /* SignUpViewController.swift */; };
+		E8E4FCB42898F11300A12254 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E4FCB32898F11300A12254 /* SignUp.storyboard */; };
+		E8E4FCB62898F11C00A12254 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4FCB52898F11C00A12254 /* SignUpViewModel.swift */; };
 		E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963B288E74C500E00879 /* AppDelegate.swift */; };
 		E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963D288E74C500E00879 /* SceneDelegate.swift */; };
 		E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8963F288E74C500E00879 /* HomeViewController.swift */; };
@@ -100,6 +103,9 @@
 		E8CAC2BE2893C0C4004BC29E /* RxSwiftErrorTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftErrorTrackerTests.swift; sourceTree = "<group>"; };
 		E8CAC2C028968449004BC29E /* KeychainRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainRepositoryProtocol.swift; sourceTree = "<group>"; };
 		E8CAC2C2289685CB004BC29E /* KeychainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainRepository.swift; sourceTree = "<group>"; };
+		E8E4FCB12898F10C00A12254 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E8E4FCB32898F11300A12254 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		E8E4FCB52898F11C00A12254 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		E8E89638288E74C500E00879 /* LoginFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E8963B288E74C500E00879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E8963D288E74C500E00879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +254,32 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		E8E4FCAE2898F0E100A12254 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				E8E4FCB02898F0F800A12254 /* View */,
+				E8E4FCAF2898F0F100A12254 /* ViewModel */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		E8E4FCAF2898F0F100A12254 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E8E4FCB52898F11C00A12254 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E8E4FCB02898F0F800A12254 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E8E4FCB12898F10C00A12254 /* SignUpViewController.swift */,
+				E8E4FCB32898F11300A12254 /* SignUp.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E8E8962F288E74C500E00879 = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				E8E89694288E98C200E00879 /* Common */,
+				E8E4FCAE2898F0E100A12254 /* SignUp */,
 				E8E8966F288E7E3600E00879 /* Login */,
 				E8E8966E288E7E3000E00879 /* Home */,
 			);
@@ -476,6 +509,7 @@
 				E8E89648288E74C700E00879 /* LaunchScreen.storyboard in Resources */,
 				E8E89645288E74C700E00879 /* Assets.xcassets in Resources */,
 				E8E89643288E74C500E00879 /* Home.storyboard in Resources */,
+				E8E4FCB42898F11300A12254 /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +540,7 @@
 				E8E89640288E74C500E00879 /* HomeViewController.swift in Sources */,
 				E8E8969A288EFDD200E00879 /* HomeViewModel.swift in Sources */,
 				E86E7EC4288FC08700D9D194 /* UserLoginUseCase.swift in Sources */,
+				E8E4FCB62898F11C00A12254 /* SignUpViewModel.swift in Sources */,
 				E8CAC2B42892667A004BC29E /* LoginError.swift in Sources */,
 				E8E89696288E98CA00E00879 /* ViewModelType.swift in Sources */,
 				E8E8963C288E74C500E00879 /* AppDelegate.swift in Sources */,
@@ -517,6 +552,7 @@
 				E801B1AD28980C6D005E52F1 /* UserDefaultsRepositoryProtocol.swift in Sources */,
 				E86E7ED5288FE3A600D9D194 /* NetworkService.swift in Sources */,
 				E8CAC2B928927FBB004BC29E /* JsonError.swift in Sources */,
+				E8E4FCB22898F10C00A12254 /* SignUpViewController.swift in Sources */,
 				E8E8963E288E74C500E00879 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
