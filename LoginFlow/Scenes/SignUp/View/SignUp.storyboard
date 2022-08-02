@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fzK-ca-kpo">
-                                <rect key="frame" x="20" y="108" width="374" height="404"/>
+                                <rect key="frame" x="20" y="108" width="374" height="445.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hIS-fa-hCK">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="73"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="114.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLG-6p-FTE">
                                                 <rect key="frame" x="0.0" y="0.0" width="39" height="18"/>
@@ -36,6 +36,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디는 영어 소문자, 숫자를 이용하여 7글자 이상 15자 이하로 입력해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4E-Wl-iMK">
+                                                <rect key="frame" x="0.0" y="83" width="327.5" height="31.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="vqR-XE-GwO" secondAttribute="trailing" id="Fmg-2a-V2J"/>
@@ -43,7 +49,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LZi-rz-9ou">
-                                        <rect key="frame" x="0.0" y="93" width="374" height="99"/>
+                                        <rect key="frame" x="0.0" y="134.5" width="374" height="99"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6E9-cW-BhD">
                                                 <rect key="frame" x="0.0" y="0.0" width="39" height="18"/>
@@ -72,7 +78,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="55R-62-ody">
-                                        <rect key="frame" x="0.0" y="212" width="374" height="99"/>
+                                        <rect key="frame" x="0.0" y="253.5" width="374" height="99"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPi-tI-o0e">
                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="18"/>
@@ -103,7 +109,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7yi-2W-LAj">
-                                        <rect key="frame" x="0.0" y="331" width="374" height="73"/>
+                                        <rect key="frame" x="0.0" y="372.5" width="374" height="73"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ng3-Hm-48v">
                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="18"/>
@@ -133,7 +139,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORV-ay-OCP">
-                                <rect key="frame" x="20" y="542" width="374" height="40"/>
+                                <rect key="frame" x="20" y="583.5" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xIH-av-a6Y"/>
                                 </constraints>
@@ -164,6 +170,7 @@
                         <outlet property="emailTextField" destination="nQH-Bi-BHd" id="gDd-qV-uJA"/>
                         <outlet property="emailValidationLabel" destination="Jhs-Xo-eKP" id="x3p-Jd-gJQ"/>
                         <outlet property="idTextField" destination="vqR-XE-GwO" id="qzE-R8-OpB"/>
+                        <outlet property="idValidationLabel" destination="B4E-Wl-iMK" id="rvz-OV-fb0"/>
                         <outlet property="passwordTextField" destination="KDI-8O-Ytg" id="wuY-Je-3WO"/>
                         <outlet property="rePasswordTextField" destination="puQ-Lr-aeg" id="UdJ-Ov-GeZ"/>
                         <outlet property="signUpButton" destination="ORV-ay-OCP" id="AOs-od-pNg"/>

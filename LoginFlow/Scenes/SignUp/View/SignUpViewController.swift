@@ -19,6 +19,9 @@ final class SignUpViewController: UIViewController {
     // MARK: - UI Components
     
     @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var idValidationLabel: UILabel! {
+        didSet { idValidationLabel.isHidden = true }
+    }
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailValidationLabel: UILabel! {
         didSet { emailValidationLabel.isHidden = true }
@@ -50,19 +53,22 @@ final class SignUpViewController: UIViewController {
         
         [output.signUp
             .emit(onNext: { if $0 { self.dismiss(animated: false) } }),
+         output.idValidation
+            .skip(1)
+            .drive(onNext: { self.idValidationLabel.isHidden = $0 }),
          output.emailValidation
-             .skip(1)
-             .drive(onNext: { self.emailValidationLabel.isHidden = $0 }),
+            .skip(1)
+            .drive(onNext: { self.emailValidationLabel.isHidden = $0 }),
          output.passwordValidation
-             .drive(),
+            .drive(),
          output.signUpButtonEnable
-             .drive(onNext: { self.signUpButton.isEnabled = $0 }),
+            .drive(onNext: { self.signUpButton.isEnabled = $0 }),
          output.error
-             .emit(
-                 onNext: { error in
-                     print(error)
-                 }
-             )]
+            .emit(
+                onNext: { error in
+                    print(error)
+                }
+            )]
             .forEach { $0.disposed(by: disposeBag) }
     }
     

@@ -20,6 +20,7 @@ final class SignUpViewModel: ViewModelType {
     
     struct Output {
         var signUp: Signal<Bool>
+        var idValidation: Driver<Bool>
         var emailValidation: Driver<Bool>
         var passwordValidation: Driver<Bool>
         var signUpButtonEnable: Driver<Bool>
@@ -42,12 +43,18 @@ final class SignUpViewModel: ViewModelType {
             input.email,
             input.password
         )
+        let idValidation = input.id
+            .map { self.validateId($0) }
         let emailValidation = input.email
             .map { self.validateEmail($0) }
         let passwordValidation = Driver.combineLatest(input.password, input.rePassword)
             .map { self.validatePassword($0, $1) }
-        let signUpButtonEnable = Driver.combineLatest(emailValidation, passwordValidation)
-            .map { $0 && $1 }
+        let signUpButtonEnable = Driver.combineLatest(
+            idValidation,
+            emailValidation,
+            passwordValidation
+        )
+            .map { $0 && $1 && $2 }
         let signUp = input.signUpRequest
             .withLatestFrom(signUpInfo)
             .flatMapFirst { id, email, password in
@@ -67,6 +74,7 @@ final class SignUpViewModel: ViewModelType {
         
         return Output.init(
             signUp: signUp,
+            idValidation: idValidation,
             emailValidation: emailValidation,
             passwordValidation: passwordValidation,
             signUpButtonEnable: signUpButtonEnable,
@@ -75,6 +83,11 @@ final class SignUpViewModel: ViewModelType {
     }
     
     // MARK: - Private
+    
+    private func validateId(_ id: String) -> Bool {
+        let idRegex = "[a-z0-9]{7,15}"
+        return NSPredicate(format: "SELF MATCHES %@", idRegex).evaluate(with: id)
+    }
     
     private func validatePassword(_ password: String, _ rePassword: String) -> Bool {
         guard
