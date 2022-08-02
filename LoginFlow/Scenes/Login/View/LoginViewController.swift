@@ -86,7 +86,7 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Action
     
-    @IBAction func didTapDismissButton(_ sender: UIButton) {
+    @IBAction func didTapCancelButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: false)
     }
     

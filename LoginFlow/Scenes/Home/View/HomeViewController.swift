@@ -85,8 +85,8 @@ final class HomeViewController: UIViewController {
     
     private func showLoginView() {
         let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: LoginViewController.self))
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: false)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: false)
     }
 }
