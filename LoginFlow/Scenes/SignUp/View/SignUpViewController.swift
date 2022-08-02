@@ -36,18 +36,17 @@ final class SignUpViewController: UIViewController {
             id: idTextField.rx.text.orEmpty.asDriver(),
             email: emailTextField.rx.text.orEmpty.asDriver(),
             password: passwordTextField.rx.text.orEmpty.asDriver(),
+            rePassword: rePasswordTextField.rx.text.orEmpty.asDriver(),
             signUpRequest: signUpButton.rx.tap.asSignal()
         )
         let output = viewModel.transform(input: input)
         
         output.signUp
-            .emit(
-                onNext: { isSuccess in
-                    if isSuccess {
-                        self.dismiss(animated: false)
-                    }
-                }
-            )
+            .emit(onNext: { if $0 { self.dismiss(animated: false) } })
+            .disposed(by: disposeBag)
+        
+        output.passwordValidation
+            .drive(onNext: { self.signUpButton.isEnabled = $0 })
             .disposed(by: disposeBag)
         
         output.error
