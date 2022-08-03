@@ -48,8 +48,20 @@ final class UserRepository: UserRepositoryProtocol {
     }
     
     func checkToken(token: Token) -> Observable<Bool> {
-        // FIXME: NetworkService 로 요청해서 유효한지 검사
-        return .of(true)
+        let path: String = "/api/member"
+        
+        return networkService.request(
+            path,
+            headers: (key: "X-AUTH-TOKEN", value: token.value),
+            method: .get
+        )
+        .map {
+            if $0["id"].string == token.id {
+                return true
+            } else {
+                return false
+            }
+        }
     }
     
     func signUp(query: SignUpQuery) -> Observable<Void> {
