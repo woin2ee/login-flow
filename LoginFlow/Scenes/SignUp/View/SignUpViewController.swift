@@ -93,6 +93,10 @@ final class SignUpViewController: UIViewController {
         self.dismiss(animated: false)
     }
     
+    @IBAction func didTapBackgroundView(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
     private func showAlert(message: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alertController = UIAlertController.init(
             title: "알림",

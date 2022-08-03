@@ -67,11 +67,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WTb-4s-HMP" secondAttribute="trailing" constant="30" id="2Vp-t5-lFe"/>
                             <constraint firstItem="WTb-4s-HMP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="A9P-fS-2Aa"/>
                             <constraint firstItem="WTb-4s-HMP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="180" id="pXs-7p-oUC"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="RDI-GS-ZsF" appends="YES" id="0rr-dc-3tK"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="로그인" id="rVp-DV-Qr2">
                         <barButtonItem key="leftBarButtonItem" title="취소" id="bDs-h8-Lzl">
@@ -89,6 +93,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="RDI-GS-ZsF">
+                    <connections>
+                        <action selector="didTapBackgroundView:" destination="Y6W-OH-hqX" id="V8z-P8-mEt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="65.625"/>
         </scene>
