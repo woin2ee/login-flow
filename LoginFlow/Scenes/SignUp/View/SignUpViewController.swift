@@ -73,10 +73,20 @@ final class SignUpViewController: UIViewController {
                 }),
             output.idValidation
                 .skip(1)
-                .drive(onNext: { self.idValidationLabel.isHidden = $0 }),
+                .drive(onNext: {
+                    self.idValidationLabel.isHidden = $0
+                    UIView.animate(withDuration: 0.1) {
+                        self.view.layoutIfNeeded()
+                    }
+                }),
             output.emailValidation
                 .skip(1)
-                .drive(onNext: { self.emailValidationLabel.isHidden = $0 }),
+                .drive(onNext: {
+                    self.emailValidationLabel.isHidden = $0
+                    UIView.animate(withDuration: 0.1) {
+                        self.view.layoutIfNeeded()
+                    }
+                }),
             output.passwordValidation
                 .drive(),
             output.signUpButtonEnable
