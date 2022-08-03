@@ -31,16 +31,10 @@ final class SignUpViewController: UIViewController {
         didSet { emailValidationLabel.isHidden = true }
     }
     @IBOutlet weak var passwordTextField: UITextField! {
-        didSet {
-            passwordTextField.isSecureTextEntry = true
-            passwordTextField.textContentType = .oneTimeCode
-        }
+        didSet { passwordTextField.isSecureTextEntry = true }
     }
     @IBOutlet weak var rePasswordTextField: UITextField! {
-        didSet {
-            rePasswordTextField.isSecureTextEntry = true
-            rePasswordTextField.textContentType = .oneTimeCode
-        }
+        didSet { rePasswordTextField.isSecureTextEntry = true }
     }
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var signUpButtonBottomConstraint: NSLayoutConstraint!
