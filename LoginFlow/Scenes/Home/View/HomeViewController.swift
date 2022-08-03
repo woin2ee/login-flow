@@ -62,25 +62,16 @@ final class HomeViewController: UIViewController {
         )
         let output = viewModel.transform(input: input)
         
-        output.isloggedIn
-            .drive(
-                onNext: { isloggedIn in
-                    if isloggedIn {
-                        self.changeButton(to: .logout)
-                    } else {
-                        self.changeButton(to: .login)
-                    }
-                }
-            )
-            .disposed(by: disposeBag)
-        
-        output.logout
-            .drive(
-                onNext: {
-                    self.changeButton(to: .login)
-                }
-            )
-            .disposed(by: disposeBag)
+        [
+            output.isloggedIn
+                .drive(onNext: { isloggedIn in
+                    if isloggedIn { self.changeButton(to: .logout) }
+                    else { self.changeButton(to: .login) }
+                }),
+            output.logout
+                .drive(onNext: { self.changeButton(to: .login) })
+        ]
+            .forEach { $0.disposed(by: disposeBag) }
     }
     
     // MARK: - Actions

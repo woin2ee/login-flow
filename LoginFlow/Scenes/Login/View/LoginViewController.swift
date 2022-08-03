@@ -56,18 +56,14 @@ final class LoginViewController: UIViewController {
         )
         let output = viewModel.transform(input: input)
         
-        output.login
-            .drive(
-                onNext: {
+        [
+            output.login
+                .drive(onNext: {
                     self.view.endEditing(true)
                     self.dismiss(animated: false)
-                }
-            )
-            .disposed(by: disposeBag)
-        
-        output.error
-            .emit(
-                onNext: { error in
+                }),
+            output.error
+                .emit(onNext: { error in
                     self.view.endEditing(true)
                     self.passwordTextField.text = ""
                     self.passwordTextField.sendActions(for: .valueChanged)
@@ -77,9 +73,9 @@ final class LoginViewController: UIViewController {
                     } else {
                         self.showAlert(message: LoginError.defaultDescription)
                     }
-                }
-            )
-            .disposed(by: disposeBag)
+                })
+        ]
+            .forEach { $0.disposed(by: disposeBag) }
     }
     
     // MARK: - Actions
