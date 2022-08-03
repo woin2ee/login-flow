@@ -43,12 +43,14 @@ final class SignUpViewController: UIViewController {
         }
     }
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var signUpButtonBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        addObserversForKeyboard()
     }
     
     private func bindViewModel() {
@@ -66,9 +68,7 @@ final class SignUpViewController: UIViewController {
                 .emit(onNext: {
                     self.showAlert(
                         message: "회원가입에 성공했습니다.",
-                        handler: { _ in
-                            self.dismiss(animated: false)
-                        }
+                        handler: { _ in self.dismiss(animated: false) }
                     )
                 }),
             output.idValidation
@@ -97,6 +97,22 @@ final class SignUpViewController: UIViewController {
             .forEach { $0.disposed(by: disposeBag) }
     }
     
+    private func addObserversForKeyboard() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
     // MARK: - Actions
     
     @IBAction func didTapCancelButton(_ sender: UIBarButtonItem) {
@@ -122,5 +138,33 @@ final class SignUpViewController: UIViewController {
         alertController.addAction(defaultAction)
         
         present(alertController, animated: true)
+    }
+    
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        guard
+            let userInfo = notification.userInfo,
+            let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.height,
+            let keyboardAnimationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval)
+        else { return }
+        
+        let spacing: CGFloat = 20
+        
+        UIView.animate(withDuration: keyboardAnimationDuration) {
+            self.signUpButtonBottomConstraint.constant = keyboardHeight + spacing
+            self.signUpButtonBottomConstraint.isActive = true
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        guard
+            let userInfo = notification.userInfo,
+            let keyboardAnimationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval)
+        else { return }
+        
+        UIView.animate(withDuration: keyboardAnimationDuration) {
+            self.signUpButtonBottomConstraint.isActive = false
+            self.view.layoutIfNeeded()
+        }
     }
 }

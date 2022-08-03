@@ -155,7 +155,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="fAe-oG-wMN"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORV-ay-OCP">
-                                <rect key="frame" x="20" y="583.5" width="374" height="40"/>
+                                <rect key="frame" x="20" y="573.5" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xIH-av-a6Y"/>
                                 </constraints>
@@ -170,10 +170,16 @@
                             <constraint firstItem="6E7-7H-yCR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="4Yt-jx-Lih"/>
                             <constraint firstItem="ORV-ay-OCP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="IL8-o0-rTp"/>
                             <constraint firstItem="6E7-7H-yCR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="KGK-Ba-swx"/>
+                            <constraint firstAttribute="bottom" secondItem="ORV-ay-OCP" secondAttribute="bottom" id="KS9-t4-WlA"/>
                             <constraint firstItem="6E7-7H-yCR" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-20" id="T4Y-3f-G9T"/>
-                            <constraint firstItem="ORV-ay-OCP" firstAttribute="top" secondItem="6E7-7H-yCR" secondAttribute="bottom" constant="30" id="XTh-7o-WHg"/>
+                            <constraint firstItem="ORV-ay-OCP" firstAttribute="top" secondItem="6E7-7H-yCR" secondAttribute="bottom" constant="20" id="XTh-7o-WHg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ORV-ay-OCP" secondAttribute="trailing" constant="20" id="cH1-7i-yRu"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KS9-t4-WlA"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="GZI-lZ-Th7" appends="YES" id="dg1-9n-axa"/>
                         </connections>
@@ -194,6 +200,7 @@
                         <outlet property="passwordTextField" destination="KDI-8O-Ytg" id="wuY-Je-3WO"/>
                         <outlet property="rePasswordTextField" destination="puQ-Lr-aeg" id="UdJ-Ov-GeZ"/>
                         <outlet property="signUpButton" destination="ORV-ay-OCP" id="AOs-od-pNg"/>
+                        <outlet property="signUpButtonBottomConstraint" destination="KS9-t4-WlA" id="TPU-2h-ccg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
