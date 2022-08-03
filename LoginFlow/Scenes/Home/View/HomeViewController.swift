@@ -45,6 +45,7 @@ final class HomeViewController: UIViewController {
         }
     }
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var stateLabel: UILabel!
     
     // MARK: - Life Cycle
     
@@ -88,9 +89,11 @@ final class HomeViewController: UIViewController {
         case .login:
             self.loginButton.isHidden = false
             self.logoutButton.isHidden = true
+            stateLabel.text = "로그인이 필요합니다."
         case .logout:
             self.loginButton.isHidden = true
             self.logoutButton.isHidden = false
+            stateLabel.text = "환영합니다!"
         }
     }
 }

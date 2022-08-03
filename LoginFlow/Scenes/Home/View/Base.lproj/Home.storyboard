@@ -50,6 +50,7 @@
                     <connections>
                         <outlet property="loginButton" destination="ZjL-Sf-x6b" id="KcD-AO-kNe"/>
                         <outlet property="logoutButton" destination="XYS-dz-1EE" id="PxG-v2-Gjl"/>
+                        <outlet property="stateLabel" destination="HIp-BD-dsr" id="vfg-7D-pwg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
