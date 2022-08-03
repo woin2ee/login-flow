@@ -10,4 +10,5 @@ import RxSwift
 protocol UserRepositoryProtocol {
     func getToken(query: LoginQuery) -> Observable<Token>
     func checkToken(token: Token) -> Observable<Bool>
+    func signUp(query: SignUpQuery) -> Observable<Void>
 }

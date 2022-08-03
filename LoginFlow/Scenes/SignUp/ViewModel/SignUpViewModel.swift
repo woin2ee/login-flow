@@ -19,7 +19,7 @@ final class SignUpViewModel: ViewModelType {
     }
     
     struct Output {
-        var signUp: Signal<Bool>
+        var signUp: Signal<Void>
         var idValidation: Driver<Bool>
         var emailValidation: Driver<Bool>
         var passwordValidation: Driver<Bool>
@@ -66,7 +66,7 @@ final class SignUpViewModel: ViewModelType {
                     )
                 )
                 .trackError(errorTracker)
-                .asSignal(onErrorJustReturn: false)
+                .asSignal(onErrorSignalWith: .empty())
             }
         
         return Output.init(

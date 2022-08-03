@@ -51,4 +51,13 @@ final class UserRepository: UserRepositoryProtocol {
         // FIXME: NetworkService 로 요청해서 유효한지 검사
         return .of(true)
     }
+    
+    func signUp(query: SignUpQuery) -> Observable<Void> {
+        let path: String = "/api/member"
+        let encoder = JSONEncoder.init()
+        let httpBody = try? encoder.encode(query)
+        
+        return networkService.request(path, httpBody, .post)
+            .map { if $0["state"].string != "CREATED" { throw SignUpError.anyError } }
+    }
 }

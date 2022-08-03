@@ -13,7 +13,11 @@ final class SignUpViewController: UIViewController {
     private let disposeBag: DisposeBag = .init()
     
     private var viewModel: SignUpViewModel! = SignUpViewModel(
-        userSignUpUseCase: UserSignUpUseCase()
+        userSignUpUseCase: UserSignUpUseCase(
+            userRepository: UserRepository(
+                networkService: NetworkService()
+            )
+        )
     )
     
     // MARK: - UI Components
@@ -57,24 +61,29 @@ final class SignUpViewController: UIViewController {
         )
         let output = viewModel.transform(input: input)
         
-        [output.signUp
-            .emit(onNext: { if $0 { self.dismiss(animated: false) } }),
-         output.idValidation
-            .skip(1)
-            .drive(onNext: { self.idValidationLabel.isHidden = $0 }),
-         output.emailValidation
-            .skip(1)
-            .drive(onNext: { self.emailValidationLabel.isHidden = $0 }),
-         output.passwordValidation
-            .drive(),
-         output.signUpButtonEnable
-            .drive(onNext: { self.signUpButton.isEnabled = $0 }),
-         output.error
-            .emit(
-                onNext: { error in
-                    print(error)
-                }
-            )]
+        [
+            output.signUp
+                .emit(onNext: {
+                    self.showAlert(
+                        message: "회원가입에 성공했습니다.",
+                        handler: { _ in
+                            self.dismiss(animated: false)
+                        }
+                    )
+                }),
+            output.idValidation
+                .skip(1)
+                .drive(onNext: { self.idValidationLabel.isHidden = $0 }),
+            output.emailValidation
+                .skip(1)
+                .drive(onNext: { self.emailValidationLabel.isHidden = $0 }),
+            output.passwordValidation
+                .drive(),
+            output.signUpButtonEnable
+                .drive(onNext: { self.signUpButton.isEnabled = $0 }),
+            output.error
+                .emit(onNext: { _ in self.showAlert(message: SignUpError.anyError.rawValue) })
+        ]
             .forEach { $0.disposed(by: disposeBag) }
     }
     
@@ -82,5 +91,22 @@ final class SignUpViewController: UIViewController {
     
     @IBAction func didTapCancelButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: false)
+    }
+    
+    private func showAlert(message: String, handler: ((UIAlertAction) -> Void)? = nil) {
+        let alertController = UIAlertController.init(
+            title: "알림",
+            message: message,
+            preferredStyle: .alert
+        )
+        let defaultAction = UIAlertAction.init(
+            title: "확인",
+            style: .default,
+            handler: handler
+        )
+        
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true)
     }
 }

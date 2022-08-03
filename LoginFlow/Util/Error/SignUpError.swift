@@ -8,5 +8,5 @@
 import Foundation
 
 enum SignUpError: String, Error {
-    case invalidPassword = "비밀번호는 5자 이상 15자 이하로 입력해주세요."
+    case anyError = "해당 아이디를 사용중인 회원이 이미 존재합니다."
 }
