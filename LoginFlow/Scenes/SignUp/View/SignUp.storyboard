@@ -193,12 +193,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="confirmPasswordTextField" destination="puQ-Lr-aeg" id="UdJ-Ov-GeZ"/>
                         <outlet property="emailTextField" destination="nQH-Bi-BHd" id="gDd-qV-uJA"/>
                         <outlet property="emailValidationLabel" destination="Jhs-Xo-eKP" id="x3p-Jd-gJQ"/>
                         <outlet property="idTextField" destination="vqR-XE-GwO" id="qzE-R8-OpB"/>
                         <outlet property="idValidationLabel" destination="B4E-Wl-iMK" id="rvz-OV-fb0"/>
                         <outlet property="passwordTextField" destination="KDI-8O-Ytg" id="wuY-Je-3WO"/>
-                        <outlet property="rePasswordTextField" destination="puQ-Lr-aeg" id="UdJ-Ov-GeZ"/>
                         <outlet property="signUpButton" destination="ORV-ay-OCP" id="AOs-od-pNg"/>
                         <outlet property="signUpButtonBottomConstraint" destination="KS9-t4-WlA" id="TPU-2h-ccg"/>
                     </connections>

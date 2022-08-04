@@ -14,7 +14,7 @@ final class SignUpViewModel: ViewModelType {
         var id: Driver<String>
         var email: Driver<String>
         var password: Driver<String>
-        var rePassword: Driver<String>
+        var confirmPassword: Driver<String>
         var signUpRequest: Signal<Void>
     }
     
@@ -44,7 +44,7 @@ final class SignUpViewModel: ViewModelType {
             .map { self.validateId($0) }
         let emailValidation = input.email
             .map { self.validateEmail($0) }
-        let passwordValidation = Driver.combineLatest(input.password, input.rePassword)
+        let passwordValidation = Driver.combineLatest(input.password, input.confirmPassword)
             .map { self.validatePassword($0, $1) }
         let signUpButtonEnable = Driver.combineLatest(
             idValidation,
@@ -86,8 +86,8 @@ final class SignUpViewModel: ViewModelType {
         return NSPredicate(format: "SELF MATCHES %@", idRegex).evaluate(with: id)
     }
     
-    private func validatePassword(_ password: String, _ rePassword: String) -> Bool {
-        guard password == rePassword else { return false }
+    private func validatePassword(_ password: String, _ confirmPassword: String) -> Bool {
+        guard password == confirmPassword else { return false }
         
         let passwordRegex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{5,15}"
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)

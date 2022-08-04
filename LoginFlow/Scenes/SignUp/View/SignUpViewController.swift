@@ -33,8 +33,8 @@ final class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet { passwordTextField.isSecureTextEntry = true }
     }
-    @IBOutlet weak var rePasswordTextField: UITextField! {
-        didSet { rePasswordTextField.isSecureTextEntry = true }
+    @IBOutlet weak var confirmPasswordTextField: UITextField! {
+        didSet { confirmPasswordTextField.isSecureTextEntry = true }
     }
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var signUpButtonBottomConstraint: NSLayoutConstraint!
@@ -52,7 +52,7 @@ final class SignUpViewController: UIViewController {
             id: idTextField.rx.text.orEmpty.asDriver(),
             email: emailTextField.rx.text.orEmpty.asDriver(),
             password: passwordTextField.rx.text.orEmpty.asDriver(),
-            rePassword: rePasswordTextField.rx.text.orEmpty.asDriver(),
+            confirmPassword: confirmPasswordTextField.rx.text.orEmpty.asDriver(),
             signUpRequest: signUpButton.rx.tap.asSignal()
         )
         let output = viewModel.transform(input: input)
