@@ -18,6 +18,7 @@
 		E86E7ED0288FD03000D9D194 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7ECF288FD03000D9D194 /* UserRepository.swift */; };
 		E86E7ED2288FD55300D9D194 /* LoginQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7ED1288FD55300D9D194 /* LoginQuery.swift */; };
 		E86E7ED5288FE3A600D9D194 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7ED4288FE3A600D9D194 /* NetworkService.swift */; };
+		E873E806289BA11700ACF718 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E873E808289BA11700ACF718 /* Localizable.strings */; };
 		E8CAC2AE2891495E004BC29E /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */; };
 		E8CAC2AF2891495E004BC29E /* SwiftyJSON.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E8CAC2B02891496B004BC29E /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */; };
@@ -97,6 +98,8 @@
 		E86E7ECF288FD03000D9D194 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		E86E7ED1288FD55300D9D194 /* LoginQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginQuery.swift; sourceTree = "<group>"; };
 		E86E7ED4288FE3A600D9D194 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E873E807289BA11700ACF718 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E873E809289BA16500ACF718 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E8CAC2AD2891495E004BC29E /* SwiftyJSON.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftyJSON.xcframework; path = Carthage/Build/SwiftyJSON.xcframework; sourceTree = "<group>"; };
 		E8CAC2B32892667A004BC29E /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
 		E8CAC2B52892793D004BC29E /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
@@ -346,6 +349,7 @@
 				E8E89644288E74C700E00879 /* Assets.xcassets */,
 				E8E89649288E74C700E00879 /* Info.plist */,
 				E8E89646288E74C700E00879 /* LaunchScreen.storyboard */,
+				E873E808289BA11700ACF718 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -497,6 +501,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = E8E8962F288E74C500E00879;
 			productRefGroup = E8E89639288E74C500E00879 /* Products */;
@@ -515,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8E89673288E7E7A00E00879 /* Login.storyboard in Resources */,
+				E873E806289BA11700ACF718 /* Localizable.strings in Resources */,
 				E8E89648288E74C700E00879 /* LaunchScreen.storyboard in Resources */,
 				E8E89645288E74C700E00879 /* Assets.xcassets in Resources */,
 				E8E89643288E74C500E00879 /* Home.storyboard in Resources */,
@@ -589,6 +595,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E873E808289BA11700ACF718 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E873E807289BA11700ACF718 /* en */,
+				E873E809289BA16500ACF718 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E8E89641288E74C500E00879 /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -612,6 +627,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -672,6 +688,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  LoginFlow
+
+  Created by Jaewon on 2022/08/04.
+  
+*/
+
+"Please log in." = "로그인이 필요합니다.";
+"Welcome!" = "환영합니다!";
