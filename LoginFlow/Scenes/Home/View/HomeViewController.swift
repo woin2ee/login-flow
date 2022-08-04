@@ -89,11 +89,11 @@ final class HomeViewController: UIViewController {
         case .login:
             self.loginButton.isHidden = false
             self.logoutButton.isHidden = true
-            stateLabel.text = NSLocalizedString("Please log in.", comment: "")
+            stateLabel.text = "Please log in.".localized
         case .logout:
             self.loginButton.isHidden = true
             self.logoutButton.isHidden = false
-            stateLabel.text = NSLocalizedString("Welcome!", comment: "")
+            stateLabel.text = "Welcome!".localized
         }
     }
 }
