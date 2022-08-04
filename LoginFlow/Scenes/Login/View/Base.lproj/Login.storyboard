@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--로그인-->
+        <!--Login-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="LoginFlow" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,12 +19,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTb-4s-HMP">
                                 <rect key="frame" x="30" y="268" width="354" height="252"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eXe-LG-M4G">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your ID." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eXe-LG-M4G">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8YY-9P-kVb">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8YY-9P-kVb">
                                         <rect key="frame" x="0.0" y="66" width="354" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -77,8 +77,8 @@
                             <outletCollection property="gestureRecognizers" destination="RDI-GS-ZsF" appends="YES" id="0rr-dc-3tK"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="로그인" id="rVp-DV-Qr2">
-                        <barButtonItem key="leftBarButtonItem" title="취소" id="bDs-h8-Lzl">
+                    <navigationItem key="navigationItem" title="Login" id="rVp-DV-Qr2">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="bDs-h8-Lzl">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="didTapCancelButton:" destination="Y6W-OH-hqX" id="uOi-qO-ymp"/>

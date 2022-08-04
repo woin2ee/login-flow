@@ -90,12 +90,12 @@ final class LoginViewController: UIViewController {
     
     private func showAlert(message: String) {
         let alertController = UIAlertController.init(
-            title: "알림",
+            title: "Alert".localized,
             message: message,
             preferredStyle: .alert
         )
         let defaultAction = UIAlertAction.init(
-            title: "확인",
+            title: "OK".localized,
             style: .default
         )
         

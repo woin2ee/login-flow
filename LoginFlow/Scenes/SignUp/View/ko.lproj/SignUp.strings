@@ -1,0 +1,45 @@
+
+/* Class = "UINavigationItem"; title = "회원가입"; ObjectID = "1FK-Re-X6B"; */
+"1FK-Re-X6B.title" = "회원가입";
+
+/* Class = "UILabel"; text = "이메일"; ObjectID = "6E9-cW-BhD"; */
+"6E9-cW-BhD.text" = "이메일";
+
+/* Class = "UILabel"; text = "아이디는 영어 소문자, 숫자를 이용하여 7글자 이상 15자 이하로 입력해 주세요."; ObjectID = "B4E-Wl-iMK"; */
+"B4E-Wl-iMK.text" = "아이디는 영어 소문자, 숫자를 이용하여 7글자 이상 15자 이하로 입력해 주세요.";
+
+/* Class = "UILabel"; text = "이메일 주소를 정확히 입력해 주세요."; ObjectID = "Jhs-Xo-eKP"; */
+"Jhs-Xo-eKP.text" = "이메일 주소를 정확히 입력해 주세요.";
+
+/* Class = "UITextField"; placeholder = " 비밀번호를 입력해 주세요."; ObjectID = "KDI-8O-Ytg"; */
+"KDI-8O-Ytg.placeholder" = " 비밀번호를 입력해 주세요.";
+
+/* Class = "UILabel"; text = "비밀번호 확인"; ObjectID = "Ng3-Hm-48v"; */
+"Ng3-Hm-48v.text" = "비밀번호 확인";
+
+/* Class = "UIButton"; configuration.title = "회원가입하기"; ObjectID = "ORV-ay-OCP"; */
+"ORV-ay-OCP.configuration.title" = "회원가입하기";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ORV-ay-OCP"; */
+"ORV-ay-OCP.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "비밀번호 입력"; ObjectID = "lPi-tI-o0e"; */
+"lPi-tI-o0e.text" = "비밀번호 입력";
+
+/* Class = "UITextField"; placeholder = " 이메일을 입력해 주세요."; ObjectID = "nQH-Bi-BHd"; */
+"nQH-Bi-BHd.placeholder" = " 이메일을 입력해 주세요.";
+
+/* Class = "UITextField"; placeholder = " 비밀번호를 다시 한번 입력해 주세요."; ObjectID = "puQ-Lr-aeg"; */
+"puQ-Lr-aeg.placeholder" = " 비밀번호를 다시 한번 입력해 주세요.";
+
+/* Class = "UILabel"; text = "영문, 숫자, 특수문자를 조합하여 5글자 이상 15자 이하로 입력해 주세요."; ObjectID = "tiM-vw-xNE"; */
+"tiM-vw-xNE.text" = "영문, 숫자, 특수문자를 조합하여 5글자 이상 15자 이하로 입력해 주세요.";
+
+/* Class = "UILabel"; text = "아이디"; ObjectID = "vLG-6p-FTE"; */
+"vLG-6p-FTE.text" = "아이디";
+
+/* Class = "UITextField"; placeholder = " 아이디를 입력해 주세요."; ObjectID = "vqR-XE-GwO"; */
+"vqR-XE-GwO.placeholder" = " 아이디를 입력해 주세요.";
+
+/* Class = "UIBarButtonItem"; title = "취소"; ObjectID = "zgx-2H-KdC"; */
+"zgx-2H-KdC.title" = "취소";

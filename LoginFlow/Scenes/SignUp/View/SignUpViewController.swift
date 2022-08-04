@@ -61,7 +61,7 @@ final class SignUpViewController: UIViewController {
             output.signUp
                 .emit(onNext: {
                     self.showAlert(
-                        message: "회원가입에 성공했습니다.",
+                        message: "You have successfully registered as a member.".localized,
                         handler: { _ in self.dismiss(animated: false) }
                     )
                 }),
@@ -119,12 +119,12 @@ final class SignUpViewController: UIViewController {
     
     private func showAlert(message: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alertController = UIAlertController.init(
-            title: "알림",
+            title: "Success".localized,
             message: message,
             preferredStyle: .alert
         )
         let defaultAction = UIAlertAction.init(
-            title: "확인",
+            title: "OK".localized,
             style: .default,
             handler: handler
         )

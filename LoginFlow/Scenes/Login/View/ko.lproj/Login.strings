@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; configuration.title = "Login"; ObjectID = "09H-JS-htU"; */
+"09H-JS-htU.configuration.title" = "로그인";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "09H-JS-htU"; */
+"09H-JS-htU.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "8YY-9P-kVb"; */
+"8YY-9P-kVb.placeholder" = "비밀번호를 입력해 주세요.";
+
+/* Class = "UIBarButtonItem"; title = "취소"; ObjectID = "bDs-h8-Lzl"; */
+"bDs-h8-Lzl.title" = "취소";
+
+/* Class = "UITextField"; placeholder = "ID"; ObjectID = "eXe-LG-M4G"; */
+"eXe-LG-M4G.placeholder" = "아이디를 입력해 주세요.";
+
+/* Class = "UIButton"; configuration.title = "Sign Up"; ObjectID = "iKr-Ly-47y"; */
+"iKr-Ly-47y.configuration.title" = "회원가입";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "iKr-Ly-47y"; */
+"iKr-Ly-47y.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "로그인"; ObjectID = "rVp-DV-Qr2"; */
+"rVp-DV-Qr2.title" = "로그인";

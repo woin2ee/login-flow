@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "HIp-BD-dsr"; */
+"HIp-BD-dsr.text" = "Home";
+
+/* Class = "UIButton"; configuration.title = "로그아웃"; ObjectID = "XYS-dz-1EE"; */
+"XYS-dz-1EE.configuration.title" = "로그아웃";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XYS-dz-1EE"; */
+"XYS-dz-1EE.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "로그인"; ObjectID = "ZjL-Sf-x6b"; */
+"ZjL-Sf-x6b.configuration.title" = "로그인";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ZjL-Sf-x6b"; */
+"ZjL-Sf-x6b.normalTitle" = "Button";
