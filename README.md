@@ -2,7 +2,7 @@
 앱의 로그인 서비스를 구현해본 프로젝트
 
 ## Screenshot
-
+![image](https://user-images.githubusercontent.com/81426024/183281573-f5833f41-db7b-4e65-9265-f970a08d1fde.png)
 
 ## Demo
 
