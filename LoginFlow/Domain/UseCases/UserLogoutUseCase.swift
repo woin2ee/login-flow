@@ -14,22 +14,22 @@ protocol UserLogoutUseCaseProtocol {
 final class UserLogoutUseCase: UserLogoutUseCaseProtocol {
     
     private var keychainRepository: KeychainRepositoryProtocol
-    private var userDefaultRepository: UserDefaultsRepositoryProtocol
+    private var userDefaultsRepository: UserDefaultsRepositoryProtocol
     
     init(
         keychainRepository: KeychainRepositoryProtocol,
-        userDefaultRepository: UserDefaultsRepositoryProtocol
+        userDefaultsRepository: UserDefaultsRepositoryProtocol
     ) {
         self.keychainRepository = keychainRepository
-        self.userDefaultRepository = userDefaultRepository
+        self.userDefaultsRepository = userDefaultsRepository
     }
     
     func execute() -> Observable<Void> {
-        guard let id = userDefaultRepository.getCurrentUserId() else {
+        guard let id = userDefaultsRepository.getCurrentUserId() else {
             return .error(KeychainError.deleteFailure)
         }
         
-        userDefaultRepository.removeCurrentUserId()
+        userDefaultsRepository.removeCurrentUserId()
         
         if keychainRepository.delete(id: id) {
             return .of(())

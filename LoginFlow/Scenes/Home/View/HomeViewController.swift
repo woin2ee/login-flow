@@ -24,11 +24,11 @@ final class HomeViewController: UIViewController {
             userRepository: UserRepository(
                 networkService: NetworkService()
             ),
-            userDefaultRepository: UserDefaultsRepository()
+            userDefaultsRepository: UserDefaultsRepository()
         ),
         userLogoutUseCase: UserLogoutUseCase(
             keychainRepository: KeychainRepository(),
-            userDefaultRepository: UserDefaultsRepository()
+            userDefaultsRepository: UserDefaultsRepository()
         )
     )
     

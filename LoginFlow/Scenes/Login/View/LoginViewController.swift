@@ -19,7 +19,7 @@ final class LoginViewController: UIViewController {
                 networkService: NetworkService()
             ),
             keychainRepository: KeychainRepository(),
-            userDefaultRepository: UserDefaultsRepository()
+            userDefaultsRepository: UserDefaultsRepository()
         )
     )
     

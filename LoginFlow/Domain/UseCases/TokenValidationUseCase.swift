@@ -16,21 +16,21 @@ final class TokenValidationUseCase: TokenValidationUseCaseProtocol {
     
     private var keychainRepository: KeychainRepositoryProtocol
     private var userRepository: UserRepositoryProtocol
-    private var userDefaultRepository: UserDefaultsRepositoryProtocol
+    private var userDefaultsRepository: UserDefaultsRepositoryProtocol
     
     init(
         keychainRepository: KeychainRepositoryProtocol,
         userRepository: UserRepositoryProtocol,
-        userDefaultRepository: UserDefaultsRepositoryProtocol
+        userDefaultsRepository: UserDefaultsRepositoryProtocol
     ) {
         self.keychainRepository = keychainRepository
         self.userRepository = userRepository
-        self.userDefaultRepository = userDefaultRepository
+        self.userDefaultsRepository = userDefaultsRepository
     }
     
     func execute() -> Observable<Bool> {
         guard
-            let id = userDefaultRepository.getCurrentUserId(),
+            let id = userDefaultsRepository.getCurrentUserId(),
             let token = keychainRepository.get(id: id)
         else { return .of(false) }
         

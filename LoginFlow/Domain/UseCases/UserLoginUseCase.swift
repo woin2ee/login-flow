@@ -16,22 +16,22 @@ final class UserLoginUseCase: UserLoginUseCaseProtocol {
     
     private var userRepository: UserRepositoryProtocol
     private var keychainRepository: KeychainRepositoryProtocol
-    private var userDefaultRepository: UserDefaultsRepositoryProtocol
+    private var userDefaultsRepository: UserDefaultsRepositoryProtocol
     
     init(
         userRepository: UserRepositoryProtocol,
         keychainRepository: KeychainRepositoryProtocol,
-        userDefaultRepository: UserDefaultsRepositoryProtocol
+        userDefaultsRepository: UserDefaultsRepositoryProtocol
     ) {
         self.userRepository = userRepository
         self.keychainRepository = keychainRepository
-        self.userDefaultRepository = userDefaultRepository
+        self.userDefaultsRepository = userDefaultsRepository
     }
     
     func execute(query: LoginQuery) -> Observable<Void> {
         return userRepository.getToken(query: query)
             .do(onNext: {
-                self.userDefaultRepository.saveCurrentUserId(query.id)
+                self.userDefaultsRepository.saveCurrentUserId(query.id)
                 if self.keychainRepository.save(token: $0) == false {
                     throw KeychainError.saveFailure
                 }
