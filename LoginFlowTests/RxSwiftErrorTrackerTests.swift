@@ -24,7 +24,7 @@ class RxSwiftErrorTrackerTests: XCTestCase {
         }
         
         let disposeBag: DisposeBag = .init()
-        let errorTracker: NewErrorTracker = .init()
+        let errorTracker: ErrorTracker = .init()
         let testSubject: PublishSubject<Int> = .init() // onNext, onError 발생 목적
         
         let expectedOnNextValue: [Int] = [1, 0]
@@ -34,7 +34,7 @@ class RxSwiftErrorTrackerTests: XCTestCase {
         var actualError: TestError = .wrongError
         
         testSubject
-            .newTrackError(errorTracker)
+            .trackError(errorTracker)
             .catchAndReturn(0)
             .subscribe(
                 onNext: { value in
