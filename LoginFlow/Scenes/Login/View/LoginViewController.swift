@@ -48,6 +48,11 @@ final class LoginViewController: UIViewController {
         bindViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        resetInputField()
+    }
+    
     private func bindViewModel() {
         let input = LoginViewModel.Input.init(
             loginRequest: loginButton.rx.tap.asSignal(),
@@ -65,8 +70,7 @@ final class LoginViewController: UIViewController {
             output.error
                 .emit(onNext: { error in
                     self.view.endEditing(true)
-                    self.passwordTextField.text = ""
-                    self.passwordTextField.sendActions(for: .valueChanged)
+                    self.resetPasswordField()
                     
                     if let error = error as? LoginError {
                         self.showAlert(message: error.description)
@@ -109,5 +113,20 @@ final class LoginViewController: UIViewController {
         let navigationController = storyboard.instantiateViewController(withIdentifier: "SignUpNavigationController")
         navigationController.modalPresentationStyle = .fullScreen
         self.present(navigationController, animated: false)
+    }
+    
+    private func resetInputField() {
+        self.resetIdField()
+        self.resetPasswordField()
+    }
+    
+    private func resetIdField() {
+        self.idTextField.text = ""
+        self.idTextField.sendActions(for: .valueChanged)
+    }
+    
+    private func resetPasswordField() {
+        self.passwordTextField.text = ""
+        self.passwordTextField.sendActions(for: .valueChanged)
     }
 }
