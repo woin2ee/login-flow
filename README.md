@@ -16,10 +16,9 @@
 
 
 ## Features
-- 개인 서버 API 호출
-- JWT token 을 이용한 로그인 관리
+- JWT Token 을 이용한 로그인 세션 관리
 - 회원가입 기능
-- Localization 적용
+- 한국어/영어 지원
 
 
 ## Tech
